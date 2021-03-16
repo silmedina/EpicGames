@@ -1,0 +1,25 @@
+/* PAGINA DE CONTACTOS */
+
+.jumbotron {
+    background-color: #D7443F;
+}
+.location-map {
+    background-color: #f1ece9;
+}
+.contact-form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.div-form-control{
+    width: 100%;
+}
+.form-control {
+    width: 100%;
+}
+.form-control:focus {
+    border-color: 	rgba(215, 68, 63, .5);
+    box-shadow: 0 0 0 0.2rem 	rgba(215, 68, 63, .5);
+}
+.button-color{
+    background-color: #D7443F;
+}
