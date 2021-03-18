@@ -19,6 +19,25 @@ btnAgregar.addEventListener('click',()=>{
 
 const limpiarForm = () =>{
     document.getElementById("form-juegos").reset();
+    let id = document.getElementById('id')
+    let nombre = document.getElementById('nombre')
+    let descripcion = document.getElementById('descripcion')
+    let categoria = document.getElementById('categoria')
+    let imagen = document.getElementById('imagen')
+    let descuento = document.getElementById('descuento')
+    let precio = document.getElementById('precio')
+    let publicado = document.getElementById('publicado')
+    let destacado = document.getElementById('destacado')
+
+    id.className ='form-control'
+    nombre.className ='form-control'
+    descripcion.className ='form-control'
+    categoria.className ='form-control'
+    imagen.className ='form-control'
+    descuento.className ='form-control'
+    precio.className ='form-control'
+    publicado.className ='form-control'
+    destacado.className ='form-control'
     /** Resetear bandera **/
     modificarJuego = false;
 }
