@@ -1,39 +1,66 @@
-function validarGeneral(event){
+function login(event){
     event.preventDefault();
+    
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
     if (
         validarCamposRequeridos() && 
-        validarEmail(document.getElementById('email')) && 
-        validarPassword(document.getElementById('password'))
+        validarEmail(email) && 
+        validarPassword(password)
         ) {
-        console.log('datos correctos');
-        resetearFormulario();
-    } else {
-        console.log('datos incorrectos');
+            if(esAdministrador(email.value,password.value)){
+                resetearFormulario();
+                alert('logueado como admin');
+                //redirigir a admin.html
+            }else{
+                if(usuarioExiste(email.value,password.value)){
+                    alert('logueado como usuario');
+                    resetearFormulario();
+                     //redirigir a inicio
+                }else{
+                    alert("usuario no existe");
+                }
+            }
+    }
+}
+
+function esAdministrador(email,password){
+    if (email ==='admin@epicgames.com' && password ==='Admin2021') {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function usuarioExiste(email,password){
+    if (email ==='silpato@gmail.com' && password ==='12345678') {
+        return true;
+    }else{
+        return false;
     }
 }
 
 
-
 function validarCamposRequeridos() {
-    let flag = false;
+    let flagValidarFormulario = false;
     let inputEmail = document.getElementById('email');
     let inputPassword = document.getElementById('password');
 
     if (inputEmail.value.trim() === '') {
         inputEmail.className = 'form-control is-invalid';
-        flag = true;
+        flagValidarFormulario = true;
     } else{
         inputEmail.className = 'form-control is-valid';
     }
 
     if (inputPassword.value.trim() === '') {
         inputPassword.className = 'form-control is-invalid';
-        flag = true;
+        flagValidarFormulario = true;
     } else{
         inputPassword.className = 'form-control is-valid';
     }
 
-    if (flag) {
+    if (flagValidarFormulario) {
         return false;
     } else {
         return true;
