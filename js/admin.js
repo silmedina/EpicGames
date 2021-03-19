@@ -102,13 +102,14 @@ function tabla(juegosCargados) {
             <td>${juegosCargados[i].destacado}</td>
             
             <td>
-                <button class="btn btn-secondary" onclick="buscarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-edit"></i></button>
-                <button class="btn btn-secondary" onclick="eliminarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-trash-alt"></i></button>
-                <button class="btn btn-secondary btn-destacado" onclick="destacarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-star"></i></button>            
+                <button class="btn btn-secondary td-btn" onclick="buscarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-edit"></i></button>
+                <button class="btn btn-secondary td-btn" onclick="eliminarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-trash-alt"></i></button>
+                <button class="btn btn-secondary td-btn" onclick="destacarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-star"></i></button>            
             </td>
         </tr>`;
         cuerpo.innerHTML += fila;
     };
+    
 }
 
 /** Funcion para editar datos de un juego **/
@@ -195,6 +196,7 @@ window.destacarJuego = function(botonDestacar){
     }
     localStorage.setItem('juegosKEY', JSON.stringify(listadoJuegos));
     leerDatosLocalStorage()
+    
 }
 
 /** Funcion para guardar los datos editados **/
@@ -254,6 +256,8 @@ window.guardarJuego = function(event){
             almacenarDatos();
         }  
     }else{
-      console.log('error') 
+      let alerta = document.getElementById('msj-envio');
+      alerta.className ='alert alert-danger mx-3'
+      alerta.innerHTML = 'Error. Verifique los datos ingresados' 
     }
 }
