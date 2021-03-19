@@ -1,27 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="Keywords" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="Keywords" content="">
+  <meta name="author" content="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
+  <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
   <title>Epic Games</title>
 </head>
+
 <body>
-  <header> 
+  <header>
   </header>
-  <main>
+  <main class="bg-dark">
+    <div class="container">
+      <div class="text-white fw-bolder py-3">
+        <h3>Administracion de juegos</h3>
+      </div>
+      <section class="py-3 text-white">
+        <div class="row justify-content-around align-items-center mx-0">
+          <div class="col-sm-10 p-0">
+            <h5>Listado de juegos</h5>
+          </div>
+          <div class="col-sm-2 p-0 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" id="btn-agregar">Agregar</button>
+          </div>
+        </div>
+        <div class="table-responsive my-3">
+          <table class="table table-dark table-striped table-bordered table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">- %</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Publicado</th>
+                <th scope="col">Destacado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaJuegos">
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
   </main>
+
+  <!-- Modal Formulario -->
+  <div class="modal fade" id="modal-juegos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo-modal">Agregar juego</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-juegos" onsubmit="guardarJuego(event)">
+                    
+                  <div class="row">
+                    <div class="col-sm-4 mb-3">
+                        <label class="form-label">Id</label>
+                        <input type="text" class="form-control" id="id" placeholder="#" >
+                        <div class="valid-feedback">
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar un ID unico
+                        </div>
+                    </div>
+                    <div class="col-sm-8 mb-3">
+                      <label class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="nombre"  placeholder="Call Of Duty">
+                      <div class="valid-feedback">
+                      </div>
+                      <div class="invalid-feedback">
+                          Ingrese el nombre del juego 
+                      </div>
+                  </div>
+                  </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Descripcion</label>
+                      <textarea name="" class="form-control" cols="" rows="3" id="descripcion" ></textarea>
+                      <div class="valid-feedback">
+                      </div>
+                      <div class="invalid-feedback">
+                          La consulta debe ser de al menos 15 caracteres
+                      </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6 mb-3">
+                        <label class="form-label">Categoria</label>
+                        <select class="form-select form-select-md" aria-label=".form-select-sm example" id="categoria">
+                          <option value="0" selected>Seleccione..</option>
+                          <option value="Deportes">Deportes</option>
+                          <option value="Accion">Accion</option>
+                          <option value="Clasicos">Clasicos</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <label class="form-label">Imagen</label>
+                        <input type="text" class="form-control" id="imagen" placeholder="cargue su img aqui">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6 mb-3">
+                      <label class="form-label">Descuento</label>
+                      <input type="number" class="form-control" id="descuento"  placeholder="10">
+                      <div class="valid-feedback">
+                      </div>
+                      <div class="invalid-feedback">
+                          Debe ingresar un numero de descuento 
+                      </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                      <label class="form-label">Precio</label>
+                      <input type="number" class="form-control" id="precio"  placeholder="500">
+                      <div class="valid-feedback">
+                      </div>
+                      <div class="invalid-feedback">
+                          Debe ingresar un precio
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-sm-6 mb-3">
+                        <label class="form-label">Publicar</label>
+                        <select class="form-select form-select-md" aria-label=".form-select-sm example" id="publicado" required>
+                          <option value="0" selected>Seleccione..</option>
+                          <option value="Si">Si</option>
+                          <option value="No">No</option>
+                        </select>
+                        <div class="valid-feedback">
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe seleccionar una opcion
+                        </div>
+                  </div>
+
+                    <div class="col-sm-6 mb-3">
+                      <div>
+                        <label class="form-label">Destacado</label>
+                        <!-- <select class="form-select form-select-md" aria-label=".form-select-sm example" id="destacado">
+                          <option value="Si">Si</option>
+                          <option value="No" selected>No</option>
+                        </select> -->
+                        <input type="text" disabled class="form-control" id="destacado"  value="No" placeholder="No">
+                      </div>
+                  </div>
+
+                  
+                  </div>
+                <div>
+                </div>
+                    <button class="btn btn-primary" type="submit" id="btn-form"> Guardar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
   <footer>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-  crossorigin="anonymous"></script>
-<script type='module' src="js/admin.js"></script>
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <script type='module' src="js/admin.js"></script>
+  <script src="js/validaciones.js"></script>
 </body>
+
 </html>

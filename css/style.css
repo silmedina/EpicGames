@@ -154,3 +154,60 @@
         width: 100%;
     }
 }
+
+/** Index **/
+.img-destacado{
+	height: 400px;
+	object-fit: cover;	
+}
+.img-destacados{
+	height: 120px;
+	object-fit: cover;
+}
+.img-deportes{
+	height: 250px;
+	object-fit: cover;
+}
+
+@media screen and (max-width: 576px) {
+	.container-fila-precios{
+		display: flex;
+		justify-content: start;
+	}
+	.fila-precios1{
+		width: 20%;
+	}
+	.fila-precios2{
+		width: 60%;
+	}
+
+}
+.carousel__contenedor {
+	position: relative;
+}
+
+
+.carousel__lista {
+	overflow: hidden;
+}
+
+.carousel__elemento {
+	text-align: center;
+}
+
+.carousel__indicadores .glider-dot {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background: #fff;
+	opacity: .2;
+	border-radius: 0;
+}
+
+.carousel__indicadores .glider-dot:hover {
+	opacity: .5;
+}
+
+.carousel__indicadores .glider-dot.active {
+	opacity: 1;
+}
