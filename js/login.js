@@ -5,18 +5,18 @@ function login(event){
     let password = document.getElementById('password');
     if (
         validarCamposRequeridos() && 
-        validarEmail(email) && 
+        // validarEmail(email) && 
         validarPassword(password)
         ) {
             if(esAdministrador(email.value,password.value)){
                 resetearFormulario();
-                alert('logueado como admin');
-                //redirigir a admin.html
+                window.location.href = "/admin.html";
+               
             }else{
                 if(usuarioExiste(email.value,password.value)){
-                    alert('logueado como usuario');
+                    window.location.href = "/index.html";
                     resetearFormulario();
-                     //redirigir a inicio
+                   
                 }else{
                     alert("usuario no existe");
                 }
@@ -25,7 +25,7 @@ function login(event){
 }
 
 function esAdministrador(email,password){
-    if (email ==='admin@epicgames.com' && password ==='Admin2021') {
+    if (email ==='admin' && password ==='admin') {
         return true;
     }else{
         return false;
@@ -79,7 +79,7 @@ function validarEmail(email){
 }
 
 function validarPassword(password){
-    if(password.value.trim() != '' && password.value.length >= 8){
+    if(password.value.trim() != '' && password.value.length >= 4){
         password.className = 'form-control is-valid';
         return true;
     }else{
