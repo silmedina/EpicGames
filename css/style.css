@@ -207,6 +207,8 @@
 	}
 
 }
+
+
 .carousel__contenedor {
 	position: relative;
 }
@@ -235,4 +237,20 @@
 
 .carousel__indicadores .glider-dot.active {
 	opacity: 1;
+}
+.td-btn{
+    align-items: center;
+}
+
+/** Admin **/
+
+@media screen and (max-width: 1199px) {
+    .td-btn{
+        margin: 2px;
+    }
+}
+@media screen and (max-width: 991px){
+    .td-btn{
+        width: 70%;
+    }
 }
