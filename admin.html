@@ -45,7 +45,7 @@
                 <th scope="col">Precio</th>
                 <th scope="col">Publicado</th>
                 <th scope="col">Destacado</th>
-                <th scope="col">Acciones</th>
+                <th id="aa" scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody id="tablaJuegos">
@@ -91,8 +91,7 @@
 
                     <div class="mb-3">
                       <label class="form-label">Descripcion</label>
-                      <textarea name="" class="form-control" cols="30" rows="3" id="descripcion" >
-                      </textarea>
+                      <textarea name="" class="form-control" cols="" rows="2" id="descripcion" ></textarea>
                       <div class="valid-feedback">
                       </div>
                       <div class="invalid-feedback">
@@ -169,6 +168,7 @@
                     <button class="btn btn-primary" type="submit" id="btn-form"> Guardar</button>
             </div>
             </form>
+            <div class="alert alert-success mx-3 d-none" role="alert" id='msj-envio'></div>
         </div>
     </div>
 </div>

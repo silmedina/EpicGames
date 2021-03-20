@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Rolling Games
 
 Proyecto de página de juegos.
@@ -27,3 +28,6 @@ _ En este proyecto se utilizaron las siguientes librerias:_
 -Emi
 
 ## Expresiones de gratitud 
+=======
+# EpicGames
+>>>>>>> bcccbe7391fe1b718b00f3ee24fa46d8bc3013e4

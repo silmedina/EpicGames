@@ -83,6 +83,7 @@ function traerDatos(){
                     </div>
                     <button type="button" class="btn btn-primary">Leer mas</button>
                     </div>
+                    </div>
                 `
                 padreDestacado.innerHTML += columna;
             }
@@ -122,7 +123,7 @@ function traerDatos(){
                     imagen = listaJuegos[i].imagen
                 }
                 let columna =`
-                    <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0">
+                    <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-3 mb-5 rounded">
                     <img class="card-img-top w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
                     <div class="card-body">
                     <h5 class="card-title">${listaJuegos[i].nombre}<span class="badge bg-secondary">Nuevo</span></h5>
