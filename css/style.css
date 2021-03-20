@@ -416,13 +416,13 @@ iframe{
 }
 
 
-@media all and (min-width:320px) and (max-width:766px){
+@media all and (min-width:320px) and (max-width:766px) {
    
     .botones-detalles {
         position: relative;
         bottom: 100px;
         left: 60px;
-        margin-left: ;
+        margin-left: 0;
     }
     .img-juego{
         width: 100%;
