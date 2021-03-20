@@ -168,6 +168,11 @@
 	height: 250px;
 	object-fit: cover;
 }
+.card-deportes{
+    animation-name: card-1;
+    animation-duration: 2s;
+}
+
 
 @media screen and (max-width: 576px) {
 	.container-fila-precios{
@@ -183,11 +188,9 @@
 
 }
 
-
 .carousel__contenedor {
 	position: relative;
 }
-
 
 .carousel__lista {
 	overflow: hidden;
@@ -219,12 +222,15 @@
 
 /** Admin **/
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1399px) {
     .td-btn{
         margin: 2px;
     }
 }
-@media screen and (max-width: 991px){
+@media screen and (max-width: 1399px){
+    .td-acciones{
+        text-align: center;
+    }
     .td-btn{
         width: 70%;
     }

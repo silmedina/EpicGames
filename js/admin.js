@@ -26,6 +26,7 @@ const limpiarForm = () =>{
     let imagen = document.getElementById('imagen')
     let descuento = document.getElementById('descuento')
     let precio = document.getElementById('precio')
+    let link = document.getElementById('link')
     let publicado = document.getElementById('publicado')
     let destacado = document.getElementById('destacado')
 
@@ -36,6 +37,7 @@ const limpiarForm = () =>{
     imagen.className ='form-control'
     descuento.className ='form-control'
     precio.className ='form-control'
+    link.className ='form-control'
     publicado.className ='form-control'
     destacado.className ='form-control'
     /** Resetear bandera **/
@@ -51,10 +53,11 @@ const almacenarDatos = ()=>{
     let imagen = document.getElementById('imagen').value;
     let descuento = document.getElementById('descuento').value;
     let precio = document.getElementById('precio').value;
+    let link = document.getElementById('link').value;
     let publicado = document.getElementById('publicado').value;
     let destacado = 'No';
 
-    let nuevoJuego = new Juego(id, nombre, descripcion, categoria, imagen, descuento, precio, publicado, destacado)
+    let nuevoJuego = new Juego(id, nombre, descripcion, categoria, imagen, descuento, precio, link, publicado, destacado)
     
     /**Agregar al Array **/
     listadoJuegos.push(nuevoJuego);
@@ -98,13 +101,14 @@ function tabla(juegosCargados) {
             <td>${juegosCargados[i].imagen}</td>
             <td>${juegosCargados[i].descuento}</td>
             <td>${juegosCargados[i].precio}</td>
+            <td>${juegosCargados[i].link}</td>
             <td>${juegosCargados[i].publicado}</td>
             <td>${juegosCargados[i].destacado}</td>
             
-            <td>
-                <button class="btn btn-secondary td-btn" onclick="buscarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-edit"></i></button>
-                <button class="btn btn-secondary td-btn" onclick="eliminarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-trash-alt"></i></button>
-                <button class="btn btn-secondary td-btn" onclick="destacarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-star"></i></button>            
+            <td class="td-acciones">
+                <button class="btn btn-secondary td-btn btn-sm" onclick="buscarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-edit"></i></button>
+                <button class="btn btn-secondary td-btn btn-sm" onclick="eliminarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-trash-alt"></i></button>
+                <button class="btn btn-secondary td-btn btn-sm" onclick="destacarJuego(this)" id="${juegosCargados[i].id}"><i class="far fa-star"></i></button>            
             </td>
         </tr>`;
         cuerpo.innerHTML += fila;
@@ -123,12 +127,12 @@ window.buscarJuego = function(botonEditar){
     document.getElementById('imagen').value = juegoEncontrado.imagen;
     document.getElementById('descuento').value = juegoEncontrado.descuento;
     document.getElementById('precio').value = juegoEncontrado.precio;
+    document.getElementById('link').value = juegoEncontrado.link;
     document.getElementById('publicado').value = juegoEncontrado.publicado;
     document.getElementById('destacado').value = juegoEncontrado.destacado;
     document.getElementById('btn-form').innerHTML ='Actualizar'
     document.getElementById('titulo-modal').innerHTML = 'Actualizar juego'
     document.getElementById('id').disabled = true;
-
 
     /** Cambiar Bandera **/
     modificarJuego = true;
@@ -180,6 +184,7 @@ window.destacarJuego = function(botonDestacar){
             listadoJuegos[i].imagen = listadoJuegos[i].imagen;
             listadoJuegos[i].descuento = listadoJuegos[i].descuento;
             listadoJuegos[i].precio = listadoJuegos[i].precio;
+            listadoJuegos[i].link = listadoJuegos[i].link;
             listadoJuegos[i].publicado = listadoJuegos[i].publicado;
             listadoJuegos[i].destacado = 'Si';
             
@@ -190,6 +195,7 @@ window.destacarJuego = function(botonDestacar){
             listadoJuegos[i].imagen = listadoJuegos[i].imagen;
             listadoJuegos[i].descuento = listadoJuegos[i].descuento;
             listadoJuegos[i].precio = listadoJuegos[i].precio;
+            listadoJuegos[i].link = listadoJuegos[i].link;
             listadoJuegos[i].publicado = listadoJuegos[i].publicado;
             listadoJuegos[i].destacado = "No";
         }
@@ -208,6 +214,7 @@ const editarDatos =() =>{
     let imagen = document.getElementById('imagen').value;
     let descuento = document.getElementById('descuento').value;
     let precio = document.getElementById('precio').value;
+    let link = document.getElementById('link').value;
     let publicado = document.getElementById('publicado').value;
     let destacado = document.getElementById('destacado').value;
 
@@ -220,6 +227,7 @@ const editarDatos =() =>{
             listadoJuegos[i].imagen = imagen;
             listadoJuegos[i].descuento = descuento;
             listadoJuegos[i].precio = precio;
+            listadoJuegos[i].link = link;
             listadoJuegos[i].publicado = publicado;
             listadoJuegos[i].destacado = destacado;
         }
@@ -248,7 +256,8 @@ window.guardarJuego = function(event){
     validarNumeros(document.getElementById('descuento'))&&
     validarNumeros(document.getElementById('precio'))&&
     validarSelect(document.getElementById('publicado'))&&
-    validarSelect(document.getElementById('categoria')) 
+    validarSelect(document.getElementById('categoria')) &&
+    validarLink(document.getElementById('link'))
     ){
         if(modificarJuego){
             editarDatos();
@@ -261,3 +270,5 @@ window.guardarJuego = function(event){
       alerta.innerHTML = 'Error. Verifique los datos ingresados' 
     }
 }
+
+/** ADMINISTRADOR DE USUARIOS **/
