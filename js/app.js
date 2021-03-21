@@ -81,7 +81,7 @@ function traerDatos(){
                             <p class="fw-bolder">$${listaJuegos[i].precio}</p>    
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary">Leer mas</button>
+                    <button type="button" class="btn btn-primary" onclick="detalle(this)" id="${listaJuegos[i].id}">Leer mas</button>
                     </div>
                     </div>
                 `
@@ -144,6 +144,11 @@ function traerDatos(){
             }
         }
     }
+}
+
+window.detalle =function(id){
+    let link = 'www.google.com.ar'
+    console.log(link)
 }
 
 /** Carrito **/

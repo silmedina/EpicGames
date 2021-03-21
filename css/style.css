@@ -237,6 +237,10 @@
 .carousel__indicadores .glider-dot:hover {
 	opacity: .5;
 }
+.ass:hover{
+    transform: scale(1.2);
+    transform-origin: center;
+}
 
 .carousel__indicadores .glider-dot.active {
 	opacity: 1;
