@@ -1,5 +1,35 @@
 import {Juego} from './administradorClases.js'
 
+(function(){
+   const usuarioLogueado = localStorage.getItem('usuarioLogueado');
+   if (usuarioLogueado != null){
+    document.getElementById('botonLogin').style.display = 'none';
+    document.getElementById('botonRegistro').style.display = 'none';
+    document.getElementById('botonCerrarSesion').style.display = '';
+
+    const usuario = JSON.parse(usuarioLogueado);
+    document.getElementById('infoUsuario').innerHTML = '<i class="far fa-user"></i> ' + usuario.email;
+   }else{
+    document.getElementById('botonCerrarSesion').style.display = 'none';  
+    document.getElementById('infoUsuario').style.display = 'none'
+   }
+})();
+
+
+var botonCerrarSesion = document.getElementById('botonCerrarSesion');
+botonCerrarSesion.addEventListener('click', cerrarSesion);
+
+
+function cerrarSesion(){
+    
+    localStorage.removeItem('usuarioLogueado');
+    document.getElementById('botonLogin').style.display = '';
+    document.getElementById('botonRegistro').style.display = '';
+    document.getElementById('botonCerrarSesion').style.display = 'none';
+    document.getElementById('infoUsuario').style.display = 'none';
+
+}
+
 window.addEventListener('load', function(){
 	new Glider(document.querySelector('.carousel__lista'), {
 		slidesToShow: 1,
