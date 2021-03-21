@@ -8,20 +8,27 @@ function login(event){
         validarPassword(password)
         ) {
             if(esAdministrador(email.value,password.value)){
-                resetearFormulario();
+                guardarUsuarioLocalStorage(email,'administrador');
                 window.location.href = "/admin.html";
                
             }else{
                 if(usuarioExiste(email.value,password.value)){
-                    const objetoUsuario = {'email': email.value, 'tipoUsuario': 'usuario'};
-                    localStorage.setItem('usuarioLogueado', JSON.stringify(objetoUsuario));
+                    guardarUsuarioLocalStorage(email,'usuario');
                     window.location.href = "/index.html";
-                   
                 }else{
                    alert("usuario o contraseña incorrecta");
                 }
             }
     }
+}
+
+function guardarUsuarioLocalStorage(email,tipousuario){
+    const objetoUsuario = {'email': email.value, 'tipoUsuario':tipousuario };
+    if(localStorage.getItem('usuarioLogueado') != null){
+        localStorage.removeItem('usuarioLogueado');
+    }
+
+    localStorage.setItem('usuarioLogueado', JSON.stringify(objetoUsuario));
 }
 
 function esAdministrador(email,password){
@@ -33,7 +40,7 @@ function esAdministrador(email,password){
 }
 
 function usuarioExiste(email,password){
-    if (email ==='silpato@gmail.com' && password ==='12345678') {
+    if (email ==='silpato@gmail.com' && password ==='1234') {
         return true;
     }else{
         return false;
