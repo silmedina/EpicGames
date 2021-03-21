@@ -1,6 +1,5 @@
 function login(event){
-    event.preventDefault();
-    
+    event.preventDefault(); 
     let email = document.getElementById('email');
     let password = document.getElementById('password');
     if (
@@ -14,18 +13,19 @@ function login(event){
                
             }else{
                 if(usuarioExiste(email.value,password.value)){
+                    const objetoUsuario = {'email': email.value, 'tipoUsuario': 'usuario'};
+                    localStorage.setItem('usuarioLogueado', JSON.stringify(objetoUsuario));
                     window.location.href = "/index.html";
-                    resetearFormulario();
                    
                 }else{
-                    alert("usuario no existe");
+                   alert("usuario o contraseña incorrecta");
                 }
             }
     }
 }
 
 function esAdministrador(email,password){
-    if (email ==='admin' && password ==='admin') {
+    if (email ==='admin@epicgames.com' && password ==='admin') {
         return true;
     }else{
         return false;
@@ -41,7 +41,7 @@ function usuarioExiste(email,password){
 }
 
 
-function validarCamposRequeridos() {
+function validarCamposRequeridos(event) {
     let flagValidarFormulario = false;
     let inputEmail = document.getElementById('email');
     let inputPassword = document.getElementById('password');
