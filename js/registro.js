@@ -46,8 +46,19 @@ import { Usuario } from './usuario.js'
             usuariosRegistrados.push(nuevoUsuario);
             localStorage.removeItem('usuariosRegistrados');
             localStorage.setItem('usuariosRegistrados', JSON.stringify(usuariosRegistrados));
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial',
+                text: 'Usuario registrado exitosamente!',
+                footer: '<a href="login.html">Ir al inicio de sesion?</a>'
+            })
         }else{
-            alert('El email ingresado ya existe');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'El email ingresado ya existe!',
+                footer: '<a href="login.html">Ir al inicio de sesion?</a>'
+            })
         }
       
     }

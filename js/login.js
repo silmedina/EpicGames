@@ -12,11 +12,26 @@ function login(event){
                 window.location.href = "/admin.html";
                
             }else{
-                if(usuarioExiste(email.value,password.value)){
-                    guardarUsuarioLocalStorage(email,'usuario');
-                    window.location.href = "/index.html";
-                }else{
-                   alert("usuario o contraseña incorrecta");
+                let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados'));
+                let usuarioPorEmail = buscarUsuarioPorEmail(usuariosRegistrados,email.value);
+                if(typeof usuarioPorEmail === 'undefined'){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'El correo ingresado no existe!',
+                        footer: '<a href="registro.html">Ir a la pagina de registro?</a>'
+                    })
+                } else{
+                    if(password.value === usuarioPorEmail.password){
+                        guardarUsuarioLocalStorage(email,'usuario');
+                        window.location.href = "/index.html";
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Password incorrecto!'
+                        })
+                    }
                 }
             }
     }
@@ -40,19 +55,6 @@ function esAdministrador(email,password){
     }else{
         return false;
     }
-}
-
-function usuarioExiste(email,password){
-    let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados'));
-    let usuarioPorEmail = buscarUsuarioPorEmail(usuariosRegistrados,email);
-    if(typeof usuarioPorEmail === 'undefined'){
-        alert('El correo ingresado no existe')
-    }else if(usuarioPorEmail.password === password){
-        return true;
-    }else{
-        return false;
-    }
-   
 }
 
 function  buscarUsuarioPorEmail(usuariosRegistrados, email){
