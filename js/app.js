@@ -1,4 +1,5 @@
 import {Juego} from './administradorClases.js'
+import { Usuario } from './usuario.js'
 
 (function(){
    const usuarioLogueado = localStorage.getItem('usuarioLogueado');
@@ -20,8 +21,18 @@ import {Juego} from './administradorClases.js'
     document.getElementById('botonRegistro').style.display = 'block';
    }
    document.getElementById('botonInicio').style.display = 'block';
+
+   cargarUsuariosRegistrados();
 })();
 
+function cargarUsuariosRegistrados(){
+    
+    if(localStorage.getItem('usuariosRegistrados') == null){
+        const objetoAdmin = new Usuario('admin', 'admin', 'admin','admin@epicgames.com','');
+        let arrayUsuarios = [objetoAdmin];
+        localStorage.setItem('usuariosRegistrados', JSON.stringify(arrayUsuarios));
+    }
+}
 
 let botonCerrarSesion = document.getElementById('botonCerrarSesion');
 botonCerrarSesion.addEventListener('click', cerrarSesion);

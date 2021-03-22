@@ -1,3 +1,6 @@
+
+import { Usuario } from './usuario.js'
+
 (function(){
     const usuarioLogueado = localStorage.getItem('usuarioLogueado');
     if (usuarioLogueado != null){
@@ -19,6 +22,11 @@
     }
     document.getElementById('botonInicio').style.display = 'block';
  })();
+
+ function registrarUsuario(event){
+     event.preventDefault();
+     alert('registro')
+ }
 
 
 // formulario
