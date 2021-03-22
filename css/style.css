@@ -3,12 +3,10 @@
     bottom: 0;
     position: fixed;
 }
-
-/* PAGINA DE CONTACTOS */
-
-.jumbotron {
-    background-color: #D7443F;
+.row{
+    margin: 0;
 }
+/* PAGINA DE CONTACTOS */
 .location-map {
     background-color: #f1ece9;
 }
@@ -384,9 +382,6 @@ width: 100%;
 vertical-align: top;
     }
 
-  
-    
-
 /*media queries*/
 
 @media all and (min-width:992px){
@@ -455,6 +450,22 @@ iframe{
     }
 }
 
+/* CSS DE PÁGINA ABOUT US */
+.card-img-top {
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    }
+    
+.card-about {
+    border: none;
+    max-width: 250px;
+    margin: auto;
+    }
+.separador {
+    border: 1px solid rgba(121, 16, 16, 0.822); 
+    width: 100%;
+}
 
 
 
