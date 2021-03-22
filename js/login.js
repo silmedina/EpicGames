@@ -4,7 +4,7 @@ function login(event){
     let password = document.getElementById('password');
     if (
         validarCamposRequeridos() && 
-        // validarEmail(email) && 
+        validarEmail(email) && 
         validarPassword(password)
         ) {
             if(esAdministrador(email.value,password.value)){
@@ -32,7 +32,10 @@ function guardarUsuarioLocalStorage(email,tipousuario){
 }
 
 function esAdministrador(email,password){
-    if (email ==='admin@epicgames.com' && password ==='admin') {
+    let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados'));
+    let usuarioAdmin = buscarUsuarioPorEmail(usuariosRegistrados,'admin@epicgames.com');
+
+    if (email === usuarioAdmin.email && password === usuarioAdmin.password) {
         return true;
     }else{
         return false;
@@ -40,11 +43,23 @@ function esAdministrador(email,password){
 }
 
 function usuarioExiste(email,password){
-    if (email ==='silpato@gmail.com' && password ==='1234') {
+    let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados'));
+    let usuarioPorEmail = buscarUsuarioPorEmail(usuariosRegistrados,email);
+    if(typeof usuarioPorEmail === 'undefined'){
+        alert('El correo ingresado no existe')
+    }else if(usuarioPorEmail.password === password){
         return true;
     }else{
         return false;
     }
+   
+}
+
+function  buscarUsuarioPorEmail(usuariosRegistrados, email){
+    let usuario = usuariosRegistrados.find(usuario=> {
+        return usuario.email === email
+      });
+    return usuario;
 }
 
 
