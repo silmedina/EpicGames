@@ -1,3 +1,9 @@
+.footer{
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
 /* PAGINA DE CONTACTOS */
 
 .jumbotron {
@@ -189,15 +195,26 @@
 	height: 120px;
 	object-fit: cover;
 }
+.img-novedades{
+    height: 50px;
+    object-fit: cover;
+}
 .img-deportes{
 	height: 250px;
 	object-fit: cover;
+}
+.panel-novedades{
+    background-color: #555353;
+    border-radius: 3px;
+}
+.card-novedades:hover{
+    background-color: #4d4d4d;
+    border-radius: 5px;
 }
 .card-deportes{
     animation-name: card-1;
     animation-duration: 2s;
 }
-
 
 @media screen and (max-width: 576px) {
 	.container-fila-precios{
@@ -237,7 +254,7 @@
 .carousel__indicadores .glider-dot:hover {
 	opacity: .5;
 }
-.ass:hover{
+.card-recomendados:hover{
     transform: scale(1.2);
     transform-origin: center;
 }
@@ -250,7 +267,12 @@
 }
 
 /** Admin **/
-
+.img-recomendados{
+    height: 200px;
+}
+.img-recomendados:hover{
+    filter:grayscale(20);
+}
 @media screen and (max-width: 1399px) {
     .td-btn{
         margin: 2px;

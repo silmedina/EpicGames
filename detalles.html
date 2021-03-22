@@ -48,9 +48,9 @@
 
         <section>
             <div id="carouselJuego" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
+                <div class="carousel-inner" id="img-carousel">
                     <div class="carousel-item active">
-                        <img src="img/ages.jpg" class="d-block w-100" alt="ages">
+                        <img src="img/ages.jpg" class="d-block w-100" id="" alt="ages">
                     </div>
                     <div class="carousel-item">
                         <img src="img/ages 2.jpg" class="d-block w-100" alt="...">
@@ -79,7 +79,7 @@
         </section>
 
         <section class="row justify-content-center text-light">
-            <section class="col-sm-12 col-md-7 col-lg-9 grande px-4">
+            <section class="col-sm-12 col-md-7 col-lg-9 grande px-4" id="juego">
                 <article class="d-flex">
                     <p class="text-success fw-bold text-light ">98% recomendado para ti</p>
                     <p class="mx-2 text-light">2020</p>
@@ -88,19 +88,20 @@
                     <p class="mx-2 text-warning celular"><strong>Nuevos juegos</strong></p>
                 </article>
                 <article>
-                    <p class="fw-bold text-light"> Age of Empires (también conocido como Age of Empires I) es un
+                    <p class="fw-bold text-light" id="descripcion"> Age of Empires (también conocido como Age of Empires I) es un
                         videojuego de estrategia en tiempo real para computadoras personales, el primero de la serie
                         homónima, lanzado el 26 de octubre de 1997 y escenificado en una línea del tiempo de 3000 años,
                         desde la temprana Edad de Piedra hasta la Edad de Hierro. El jugador tiene opción de elegir
                         entre doce civilizaciones.</p>
                 </article>
                 <article>
-                    <p><span class="text-secondary">Género: </span> Acción. Estrategia en tiempo real ambientada en el
-                        año 3000 AC
+                    <p class="text-secondary">Género: <span class="text-white" id="categoria">Acción. Estrategia en tiempo real ambientada en el
+                        año 3000 AC</span> 
                     </p>
-                    <p><span class="text-secondary">Ediciones: </span> 18 juegos para Android, iPhone, NDS, PC, PS2.</p>
-                    <p><span class="text-secondary">Este título es: </span> De diversión y entretenimiento</p>
-                    <button class="btn btn-success">Comprar <a href="error404.html"></a></button>
+                    <p class="text-secondary">Ediciones: <span class="text-white">18 juegos para Android, iPhone, NDS, PC, PS2.</span> </p>
+                    <p class="text-secondary">Precio: <span class="text-white">$</span><span class="text-white" id="precioDesc">1500</span> <del><span id="precio"></span></del></p>
+                    
+                    <button class="btn btn-primary">Comprar <a href="error404.html"></a></button>
                 </article>
             </section>
         </section>
@@ -116,73 +117,7 @@
                     <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i
                             class="fas fa-angle-left"></i></button>
                     <div class="contenedor-carousel">
-                        <div class="carousel">
-                            <div class="juego">
-                                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego1"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/mortal kombc.jpg" alt="juego2"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/tomb.jpg" alt="juego3"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/hitman.jpg" alt="juego4"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/walking dead.jpg" alt="juego5"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/mortal kombc.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/tomb.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/hitman.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/walking dead.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/mortal kombc.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/tomb.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/hitman.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/walking dead.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/mortal kombc.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/tomb.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/hitman.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/walking dead.jpg" alt="juego6"></a>
-                            </div>
-                            <div class="juego">
-                                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego6"></a>
-                            </div>
-
-
-
+                        <div class="carousel" id="carousel-recomendados">
                         </div>
                     </div>
                     <button role="button" id="flecha-derecha" class="flecha-derecha"><i
@@ -190,7 +125,7 @@
                 </div>
                     <section class="row">
 
-                        <h3 class="mt-5 mb-5">Proximamente en nuestra plataforma ...</h3>
+                        <h3 class="mt-5 mb-5">Proximamente en nuestra plataforma</h3>
                         <div class="col-sm-12 col-md-6 center">
                             <iframe class="video" src="https://www.youtube.com/embed/9wmV0aJBhsU" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

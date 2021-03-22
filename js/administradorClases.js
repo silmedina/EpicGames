@@ -10,6 +10,7 @@ export class  Juego{
         this.link = link;
         this.publicado = publicado;
         this.destacado = destacado
+        // this.anio 
     }
     
 }

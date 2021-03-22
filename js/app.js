@@ -1,5 +1,41 @@
 import {Juego} from './administradorClases.js'
 
+(function(){
+   const usuarioLogueado = localStorage.getItem('usuarioLogueado');
+   if (usuarioLogueado != null){
+    document.getElementById('botonLogin').style.display = 'none';
+    document.getElementById('botonRegistro').style.display = 'none';
+    const usuario = JSON.parse(usuarioLogueado);
+    document.getElementById('infoUsuario').innerHTML = '<i class="far fa-user"></i> ' + usuario.email;
+    if(usuario.tipoUsuario == 'administrador'){
+        document.getElementById('botonAdministrador').style.display = 'block';
+    }
+    document.getElementById('botonCerrarSesion').style.display = 'block';  
+    document.getElementById('infoUsuario').style.display = 'block';
+   }else{
+    document.getElementById('botonCerrarSesion').style.display = 'none';  
+    document.getElementById('infoUsuario').style.display = 'none';
+    document.getElementById('botonAdministrador').style.display = 'none';
+    document.getElementById('botonLogin').style.display = 'block';
+    document.getElementById('botonRegistro').style.display = 'block';
+   }
+   document.getElementById('botonInicio').style.display = 'block';
+})();
+
+
+let botonCerrarSesion = document.getElementById('botonCerrarSesion');
+botonCerrarSesion.addEventListener('click', cerrarSesion);
+
+
+function cerrarSesion(){
+    localStorage.removeItem('usuarioLogueado');
+    document.getElementById('botonLogin').style.display = '';
+    document.getElementById('botonRegistro').style.display = '';
+    document.getElementById('botonCerrarSesion').style.display = 'none';
+    document.getElementById('infoUsuario').style.display = 'none';
+    window.location.href = "/index.html";
+}
+
 window.addEventListener('load', function(){
 	new Glider(document.querySelector('.carousel__lista'), {
 		slidesToShow: 1,
@@ -42,10 +78,14 @@ function traerDatos(){
         let padreDestacado = document.getElementById('juegoDestacado');
         let padreRecomendados = document.getElementById('juegosRecomendados');
         let padreDeportes = document.getElementById('juegosDeportes');
+        let padreAccion = document.getElementById('juegosAccion');
+        let padreClasicos = document.getElementById('juegosClasicos');
         
         padreDestacado.innerHTML ='';
         padreRecomendados.innerHTML ='';
         padreDeportes.innerHTML ='';
+        padreAccion.innerHTML ='';
+        padreClasicos.innerHTML = '';
         
         /** Busqueda destacado **/
         for(let i in listaJuegos){
@@ -81,7 +121,7 @@ function traerDatos(){
                             <p class="fw-bolder">$${listaJuegos[i].precio}</p>    
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="detalle(this)" id="${listaJuegos[i].id}">Leer mas</button>
+                    <button type="button" class="btn btn-primary" onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}">Leer mas</button>
                     </div>
                     </div>
                 `
@@ -100,7 +140,7 @@ function traerDatos(){
                     imagen = listaJuegos[i].imagen
                 }
                 let columna =`
-                    <a href="" class="text-decoration-none text-white ass">
+                    <a onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" class="text-decoration-none text-white card-recomendados">
                     <div class="carousel__elemento m-0">
                     <img src="img/${imagen}" class="d-block w-100 img-destacados" alt="Rock and Roll Hall of Fame">
                     <p>${listaJuegos[i].nombre}</p>
@@ -110,6 +150,8 @@ function traerDatos(){
                 padreRecomendados.innerHTML += columna;
             }
         }
+        /** Busqueda en ofertas y nuevos **/
+
 
         /** Busuqeda categoria deportes **/
         for(let i in listaJuegos){
@@ -134,7 +176,7 @@ function traerDatos(){
                       <button class="btn btn-primary" onclick="agregarCarrito(this)" id="${listaJuegos[i].id}">Agregar al carrito</button>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-primary" >Leer mas</button>
+                      <button type="button" class="btn btn-primary" onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" >Leer mas</button>
                     </div>
                     </div>
                     </div>
@@ -143,12 +185,78 @@ function traerDatos(){
                 padreDeportes.innerHTML += columna;
             }
         }
+
+        /** Busuqeda de categoria accion **/
+        for(let i in listaJuegos){
+            if(listaJuegos[i].categoria === 'Accion'){
+                let imagen='';
+                if(listaJuegos[i].imagen === ''){
+                    /** Agregamos img por defecto **/
+                    imagen= 'imgPorDefecto.png'
+                } else{
+                    /** Img que se cargo **/
+                    imagen = listaJuegos[i].imagen
+                }
+                let columna =`
+                    <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
+                    <img class="card-img-top w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
+                    <div class="card-body">
+                    <h5 class="card-title">${listaJuegos[i].nombre}<span class="badge bg-secondary">Nuevo</span></h5>
+                    <p class="">${listaJuegos[i].descripcion}</p>
+                    <p class="fw-bolder">${listaJuegos[i].precio}</p>
+                    <div class="d-flex justify-content-between">
+                    <div>
+                      <button class="btn btn-primary" onclick="agregarCarrito(this)" id="${listaJuegos[i].id}">Agregar al carrito</button>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-primary" onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" >Leer mas</button>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                `
+                padreAccion.innerHTML += columna;
+            }
+        }
+
+        /** Busuqeda de categoria clasicos **/
+        for(let i in listaJuegos){
+            if(listaJuegos[i].categoria === 'Clasicos'){
+                let imagen='';
+                if(listaJuegos[i].imagen === ''){
+                    /** Agregamos img por defecto **/
+                    imagen= 'imgPorDefecto.png'
+                } else{
+                    /** Img que se cargo **/
+                    imagen = listaJuegos[i].imagen
+                }
+                let columna =`
+                    <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
+                    <img class="card-img-top w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
+                    <div class="card-body">
+                    <h5 class="card-title">${listaJuegos[i].nombre}<span class="badge bg-secondary">Nuevo</span></h5>
+                    <p class="">${listaJuegos[i].descripcion}</p>
+                    <p class="fw-bolder">${listaJuegos[i].precio}</p>
+                    <div class="d-flex justify-content-between">
+                    <div>
+                      <button class="btn btn-primary" onclick="agregarCarrito(this)" id="${listaJuegos[i].id}">Agregar al carrito</button>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-primary" onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" >Leer mas</button>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                `
+                padreClasicos.innerHTML += columna;
+            }
+        }
     }
 }
 
 window.detalle =function(id){
-    let link = 'www.google.com.ar'
-    console.log(link)
+    localStorage.setItem('detallesKEY',JSON.stringify(id))
+    window.location.href = '/detalles.html'
 }
 
 /** Carrito **/

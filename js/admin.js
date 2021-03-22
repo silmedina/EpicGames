@@ -1,5 +1,39 @@
 import {Juego} from './administradorClases.js'
 
+(function(){
+    const usuarioLogueado = localStorage.getItem('usuarioLogueado');
+    if (usuarioLogueado != null){
+     document.getElementById('botonLogin').style.display = 'none';
+     document.getElementById('botonRegistro').style.display = 'none';
+     const usuario = JSON.parse(usuarioLogueado);
+     document.getElementById('infoUsuario').innerHTML = '<i class="far fa-user"></i> ' + usuario.email;
+     if(usuario.tipoUsuario == 'administrador'){
+         document.getElementById('botonAdministrador').style.display = 'block';
+     }
+     document.getElementById('botonCerrarSesion').style.display = 'block';  
+     document.getElementById('infoUsuario').style.display = 'block';
+    }else{
+     document.getElementById('botonCerrarSesion').style.display = 'none';  
+     document.getElementById('infoUsuario').style.display = 'none';
+     document.getElementById('botonAdministrador').style.display = 'none';
+     document.getElementById('botonLogin').style.display = 'block';
+     document.getElementById('botonRegistro').style.display = 'block';
+    }
+    document.getElementById('botonInicio').style.display = 'block';
+ })();
+ 
+let botonCerrarSesion = document.getElementById('botonCerrarSesion');
+botonCerrarSesion.addEventListener('click', cerrarSesion);
+
+function cerrarSesion(){
+    localStorage.removeItem('usuarioLogueado');
+    document.getElementById('botonLogin').style.display = '';
+    document.getElementById('botonRegistro').style.display = '';
+    document.getElementById('botonCerrarSesion').style.display = 'none';
+    document.getElementById('infoUsuario').style.display = 'none';
+    window.location.href = "/index.html";
+}
+
 let listadoJuegos = [];
 
 /** Bandera **/
@@ -101,7 +135,7 @@ function tabla(juegosCargados) {
             <td>${juegosCargados[i].imagen}</td>
             <td>${juegosCargados[i].descuento}</td>
             <td>${juegosCargados[i].precio}</td>
-            <td>${juegosCargados[i].link}</td>
+            
             <td>${juegosCargados[i].publicado}</td>
             <td>${juegosCargados[i].destacado}</td>
             
@@ -113,11 +147,12 @@ function tabla(juegosCargados) {
         </tr>`;
         cuerpo.innerHTML += fila;
     };
-    
 }
+
 
 /** Funcion para editar datos de un juego **/
 window.buscarJuego = function(botonEditar){
+    console.log(botonEditar)
     let juegoEncontrado = listadoJuegos.find( j => j.id === botonEditar.id)
     console.log(juegoEncontrado)
     document.getElementById('id').value = juegoEncontrado.id;
@@ -270,5 +305,3 @@ window.guardarJuego = function(event){
       alerta.innerHTML = 'Error. Verifique los datos ingresados' 
     }
 }
-
-/** ADMINISTRADOR DE USUARIOS **/
