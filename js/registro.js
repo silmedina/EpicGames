@@ -2,6 +2,10 @@
 import { Usuario } from './usuario.js'
 
 (function(){
+    mostrarOcultarBotones();
+ })();
+
+ function mostrarOcultarBotones(){
     const usuarioLogueado = localStorage.getItem('usuarioLogueado');
     if (usuarioLogueado != null){
      document.getElementById('botonLogin').style.display = 'none';
@@ -21,12 +25,40 @@ import { Usuario } from './usuario.js'
      document.getElementById('botonRegistro').style.display = 'block';
     }
     document.getElementById('botonInicio').style.display = 'block';
- })();
-
- function registrarUsuario(event){
-     event.preventDefault();
-     alert('registro')
  }
+ window.registrarUsuario = function(event){
+    event.preventDefault();
+
+    // validar formulario
+
+    let usuario = document.getElementById('usuario').value;
+    let nombre = document.getElementById('nombre').value;
+    let password = document.getElementById('password').value;
+    let correo = document.getElementById('correo').value;
+    let telefono = document.getElementById('telefono').value;
+
+    let nuevoUsuario = new Usuario(usuario,nombre,password,correo,telefono);
+
+    if(localStorage.getItem('usuariosRegistrados') != null){
+        let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados'));
+        let usuarioPorEmail = buscarUsuarioPorEmail(usuariosRegistrados,correo);
+        if(typeof usuarioPorEmail === 'undefined'){
+            usuariosRegistrados.push(nuevoUsuario);
+            localStorage.removeItem('usuariosRegistrados');
+            localStorage.setItem('usuariosRegistrados', JSON.stringify(usuariosRegistrados));
+        }else{
+            alert('El email ingresado ya existe');
+        }
+      
+    }
+}
+
+function  buscarUsuarioPorEmail(usuariosRegistrados, email){
+    let usuario = usuariosRegistrados.find(usuario=> {
+        return usuario.email === email
+      });
+    return usuario;
+}
 
 
 // formulario
