@@ -515,7 +515,14 @@ margin: 0 auto;
     border: 1px solid rgba(121, 16, 16, 0.822); 
     width: 100%;
 }
-
+/* LOGIN Y REGISTRO*/
+.bg-login-registro{
+    min-height: 3000px;
+    
+}
+.scroll-login-registro{
+    overflow-y: hidden;
+}
 
 
 
