@@ -38,7 +38,7 @@ function login(event){
 }
 
 function guardarUsuarioLocalStorage(email,tipousuario){
-    const objetoUsuario = {'email': email.value, 'tipoUsuario':tipousuario };
+    const objetoUsuario = {'email': email.value, 'tipoUsuario': tipousuario };
     if(localStorage.getItem('usuarioLogueado') != null){
         localStorage.removeItem('usuarioLogueado');
     }
@@ -129,4 +129,24 @@ function resetearFormulario() {
 
     inputEmail.className = 'form-control';
     inputPassword.className = 'form-control';
+}
+
+const modalOlvidoPassword = new bootstrap.Modal(document.getElementById('modalOlvidoPassword'));
+function abrirModal(){
+    let campoEmailRecuperar = document.getElementById('emailRecuperar');
+    campoEmailRecuperar.value = '';
+    campoEmailRecuperar.className = 'form-control';
+    modalOlvidoPassword.show()
+}
+
+window.recuperarPassword = function(event){
+    event.preventDefault();
+    if (validarEmail(document.getElementById('emailRecuperar'))){
+            modalOlvidoPassword.hide();
+            Swal.fire({
+                icon: 'success',
+                title: 'Exito',
+                text: 'Se envio satisfactoriamente el correo!'
+            })
+        }
 }
