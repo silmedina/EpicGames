@@ -153,7 +153,7 @@ function traerDatos(){
         /** Busqueda en ofertas y nuevos **/
 
 
-        /** Busuqeda categoria deportes **/
+        /** Busqueda categoria deportes **/
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria === 'Deportes'){
                 let imagen='';

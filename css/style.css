@@ -27,6 +27,9 @@
 .button-color{
     background-color: #D7443F;
 }
+.text-area-resize{
+    resize: none;
+}
 /* Formulario  */
 
 .formulario {

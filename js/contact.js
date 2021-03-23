@@ -2,49 +2,52 @@
     'use strict'
     var forms = document.querySelectorAll('.needs-validation')
   
+    function sendMail(params){
+      let tempParams = {
+          to_name: document.getElementById("name").value,
+          to_email: document.getElementById("email").value,
+          message: document.getElementById("message").value,
+      };
+  
+      emailjs.send('service_o66kxx7','template_05mom3j',tempParams)
+      .then(function(res){
+          console.log("success",res.status);
+      })
+    }
+
     Array.prototype.slice.call(forms)
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
           if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
+            event.preventDefault();
+            event.stopPropagation();
+            Swal.fire({
+                title:"Verifique los campos nuevamente",
+                icon:"error",
+                timer:"5000",
+                timerProgressBar:"true"
+              })
           }
-  
-          form.classList.add('was-validated')
+          else{
+            Swal.fire({
+              title: "Seguro que quieres mandar el mensaje?",
+              icon: "question",
+              showDenyButton: true,
+              confirmButtonText: "OK!",
+              denyButtonText: "Cancelar",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                Swal.fire('El mensaje fue mandado exitosamente!', '', 'success');
+                form.classList.add('was-validated');
+                sendMail();
+                document.getElementById("contactForm").reset();
+              } else if (result.isDenied) {
+                Swal.fire('El mensaje no se envió', '', 'info');
+                document.getElementById("contactForm").reset();
+              }
+            })
+            event.preventDefault();
+          }
         }, false)
       })
   })()
-
-window.messageContact = function (event){
-    event.preventDefault();
-
-}
-
-let contactList = [];
-
-function enviarMail (){
-    console.log('desde la funcion agregar producto')
-
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let message = document.getElementById('message').value;
-
-    let newContact = new Mail( name, email, message );
-    contactList.push(newContact);
-    console.log(contactList)
-
-    localStorage.setItem('contactListKey', JSON.stringify(contactList));
-
-    limpiarFormulario()
-
-    Swal.fire(
-        'contacto agregado',
-        'El Mail se ha enviado correctamente',
-        'success'
-      )
-        leerDatos();
-}
-
-function limpiarFormulario(){
-    document.getElementById('contactForm').reset();
-}
