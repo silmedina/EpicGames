@@ -52,7 +52,8 @@ import { Usuario } from './usuario.js'
                 text: 'Usuario registrado exitosamente!',
                 footer: '<a href="login.html">Ir al inicio de sesion?</a>'
             })
-        }else{
+        
+        }else if(usuarioPorEmail && usuarioPorEmail.email){
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
