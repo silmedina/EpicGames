@@ -1,3 +1,57 @@
+@media screen and (min-width: 768px) {
+    .footer{
+        width: 100%;
+        bottom: 0;
+        position: fixed;
+    }
+
+    .footer-registro{
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-nav{
+        padding-left: 10px;
+    }
+}
+a{
+    text-decoration: none;
+}
+.logo-nav{
+    width: 40%;
+}
+.row{
+    margin: 0;
+}
+/* PAGINA DE CONTACTOS */
+.location-map {
+    background-color: #f1ece9;
+}
+.contact-form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.div-form-control{
+    width: 100%;
+}
+.form-control {
+    width: 100%;
+}
+.form-control:focus {
+    border-color: 	rgba(215, 68, 63, .5);
+    box-shadow: 0 0 0 0.2rem 	rgba(215, 68, 63, .5);
+}
+.button-color{
+    background-color: #D7443F;
+}
+.text-area-resize{
+    resize: none;
+}
+.contact-btn{
+    background-color: #000;
+}
 /* Formulario  */
 
 .formulario {
@@ -152,40 +206,29 @@
 
     .formulario-btn {
         width: 100%;
-    }
+    } 
 }
 
-/** Index **/
-.img-destacado{
-	height: 400px;
-	object-fit: cover;	
-}
-.img-destacados{
-	height: 120px;
-	object-fit: cover;
-}
+/***** Index *****/
+
 .img-deportes{
 	height: 250px;
 	object-fit: cover;
 }
 
-@media screen and (max-width: 576px) {
-	.container-fila-precios{
-		display: flex;
-		justify-content: start;
-	}
-	.fila-precios1{
-		width: 20%;
-	}
-	.fila-precios2{
-		width: 60%;
-	}
-
+/** Destacado **/
+.img-destacado{
+	height: 400px;
+	object-fit: cover;	
+}
+/** Carousel recomendados**/
+.img-destacados{
+	height: 120px;
+	object-fit: cover;
 }
 .carousel__contenedor {
 	position: relative;
 }
-
 
 .carousel__lista {
 	overflow: hidden;
@@ -207,7 +250,280 @@
 .carousel__indicadores .glider-dot:hover {
 	opacity: .5;
 }
+.card-recomendados:hover{
+    transform: scale(1.2);
+    transform-origin: center;
+}
 
 .carousel__indicadores .glider-dot.active {
 	opacity: 1;
 }
+.td-btn{
+    align-items: center;
+}
+/** Ofertas y nuevos **/
+.img-novedades{
+    width: 80px;
+    height: 80px;
+    border-radius: 3px;
+}
+.panel-novedades{
+    background-color:rgb(32,32,32);
+    border-radius: 3px;
+}
+.card-novedades:hover{
+    filter: saturate(3);
+    border-radius: 5px;
+    cursor:pointer
+}
+
+@media screen and (max-width: 576px) {
+	.container-fila-precios{
+		display: flex;
+		justify-content: start;
+	}
+    
+}
+@media screen and (max-width: 768px){
+    .carrito{
+        padding-right: 0px;
+        padding-bottom: 8px;
+    }
+    .panel-novedades{
+        margin-top: 20px;
+    }
+}
+/***** Admin *****/
+.img-recomendados{
+    height: 200px;
+}
+.img-recomendados:hover{
+    filter:grayscale(20);
+}
+@media screen and (max-width: 1399px) {
+    .td-btn{
+        margin: 2px;
+    }
+}
+@media screen and (max-width: 1399px){
+    .td-acciones{
+        text-align: center;
+    }
+    .td-btn{
+        width: 70%;
+    }
+}
+
+
+/*Pia*/
+.lista{
+    list-style: none;
+    padding: 0px;
+    color: white;
+}
+
+.boton-error404{
+    display: block;
+    margin: auto;
+    background-color: black;
+    color: white;
+    
+    
+}
+.jumbotron{
+    background-color: black;
+    padding: 5px;
+
+}
+.img-error404{
+    object-fit: cover;
+    
+}
+
+/* página detalles */
+
+.img-juego{
+    width: 100%;
+    height: 98vh;
+    opacity: 0.7;
+}
+.contenedor{
+    width: 90%;
+    margin: auto;
+}
+
+
+/*contenedor titulo y controles*/
+.contenedor-titulo-controles{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.contenedor-titulo-controles h3 {
+    color: white;
+    font-size: 30px;
+}
+.contenedor-titulo-controles .indicadores button{
+    background: white;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+    background-color: red;
+}
+/*contenedor principal y flechas*/
+
+.juegos-recomendados-contenedor{
+    margin-bottom: 70px;
+}
+.juegos-recomendados .contenedor-principal{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.juegos-recomendados .contenedor-principal .flecha-derecha,
+.juegos-recomendados .contenedor-principal .flecha-izquierda{
+    position: absolute;
+    border: none;
+    background-color: rgba(0,0,0,0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%0);
+    line-height: 40px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+
+}
+.juegos-recomendados .contenedor-principal .flecha-izquierda {
+    left: 0;
+}
+.juegos-recomendados .contenedor-principal .flecha-derecha {
+    right: 0px;
+}
+
+.juegos-recomendados .contenedor-principal .flecha-derecha:hover,
+.juegos-recomendados .contenedor-principal .flecha-izquierda:hover{
+background: rgba(0, 0, 0,0.9);}
+/*carousel*/
+.juegos-recomendados .contenedor-carousel {
+    width: 100%;
+    padding: 20px, 0;
+    overflow-x: hidden;
+    scroll-behavior:smooth ;
+    display: flex;
+}
+.juegos-recomendados .contenedor-carousel .carousel{
+display: flex;
+flex-wrap: nowrap;
+}
+.juegos-recomendados .contenedor-carousel .carousel .juego.hover{
+    transform: scale(1.2);
+    transform-origin: center;
+}
+.juegos-recomendados .contenedor-carousel .carousel .juego
+{
+    min-width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px,5px, 10px rgba(0,0,0,0.3);}
+    .juegos-recomendados .contenedor-carousel .carousel .juego img{
+width: 100%;
+vertical-align: top;
+    }
+
+/*media queries*/
+
+@media all and (min-width:992px){
+iframe{
+    width: 700px;
+    height: 350px;
+margin: 0 auto;
+}
+.botones-detalles {
+    position: relative;
+    bottom: 100px;
+    left: 100px;
+    margin-left: 7px;
+    
+    
+}
+}
+@media all and (min-width:767px) and (max-width:991px){
+    iframe{
+        width: 700px;
+        height: 350px;
+    }
+    .botones-detalles {
+        position: relative;
+        bottom: 100px;
+        left: 15px;
+        margin-left: 15px;
+    }
+    .slider{
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+}
+
+
+@media all and (min-width:320px) and (max-width:766px) {
+   
+    .botones-detalles {
+        position: relative;
+        bottom: 100px;
+        left: 60px;
+        margin-left: 0;
+    }
+    .img-juego{
+        width: 100%;
+        height: 50vh;
+        opacity: 0.7;
+    }
+    .block{
+        display: inline-block;
+    }
+    .slider{
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+    }
+    iframe{
+        width: 100%;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* CSS DE PÁGINA ABOUT US */
+.card-img-top {
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    }
+    
+.card-about {
+    border: none;
+    max-width: 250px;
+    margin: auto;
+    }
+.separador {
+    border: 1px solid rgba(121, 16, 16, 0.822); 
+    width: 100%;
+}
+
+
+
+
+

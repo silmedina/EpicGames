@@ -1,3 +1,77 @@
+
+import { Usuario } from './usuario.js'
+
+(function(){
+    mostrarOcultarBotones();
+ })();
+
+ function mostrarOcultarBotones(){
+    const usuarioLogueado = localStorage.getItem('usuarioLogueado');
+    if (usuarioLogueado != null){
+     document.getElementById('botonLogin').style.display = 'none';
+     document.getElementById('botonRegistro').style.display = 'none';
+     const usuario = JSON.parse(usuarioLogueado);
+     document.getElementById('infoUsuario').innerHTML = '<i class="far fa-user"></i> ' + usuario.email;
+     if(usuario.tipoUsuario == 'administrador'){
+         document.getElementById('botonAdministrador').style.display = 'block';
+     }
+     document.getElementById('botonCerrarSesion').style.display = 'block';  
+     document.getElementById('infoUsuario').style.display = 'block';
+    }else{
+     document.getElementById('botonCerrarSesion').style.display = 'none';  
+     document.getElementById('infoUsuario').style.display = 'none';
+     document.getElementById('botonAdministrador').style.display = 'none';
+     document.getElementById('botonLogin').style.display = 'block';
+     document.getElementById('botonRegistro').style.display = 'block';
+    }
+    document.getElementById('botonInicio').style.display = 'block';
+ }
+ window.registrarUsuario = function(event){
+    event.preventDefault();
+
+    // validar formulario
+
+    let usuario = document.getElementById('usuario').value;
+    let nombre = document.getElementById('nombre').value;
+    let password = document.getElementById('password').value;
+    let correo = document.getElementById('correo').value;
+    let telefono = document.getElementById('telefono').value;
+
+    let nuevoUsuario = new Usuario(usuario,nombre,password,correo,telefono);
+
+    if(localStorage.getItem('usuariosRegistrados') != null){
+        let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados'));
+        let usuarioPorEmail = buscarUsuarioPorEmail(usuariosRegistrados,correo);
+        if(typeof usuarioPorEmail === 'undefined'){
+            usuariosRegistrados.push(nuevoUsuario);
+            localStorage.removeItem('usuariosRegistrados');
+            localStorage.setItem('usuariosRegistrados', JSON.stringify(usuariosRegistrados));
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial',
+                text: 'Usuario registrado exitosamente!',
+                footer: '<a href="login.html">Ir al inicio de sesion?</a>'
+            })
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'El email ingresado ya existe!',
+                footer: '<a href="login.html">Ir al inicio de sesion?</a>'
+            })
+        }
+      
+    }
+}
+
+function  buscarUsuarioPorEmail(usuariosRegistrados, email){
+    let usuario = usuariosRegistrados.find(usuario=> {
+        return usuario.email === email
+      });
+    return usuario;
+}
+
+
 // formulario
 
 const formulario = document.getElementById('formulario');
@@ -158,5 +232,15 @@ function validarNumeros(elemento) {
     } else {
       elemento.className = "form-control is-invalid";
       return false;
+    }
+  }
+
+  function validarLink(elemento){
+    if(elemento.value != ''){
+        elemento.className = 'form-control is-valid';
+        return true;
+    }else{
+        elemento.className = "form-control is-invalid";
+        return false;
     }
   }

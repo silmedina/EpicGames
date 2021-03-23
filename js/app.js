@@ -1,4 +1,53 @@
 import {Juego} from './administradorClases.js'
+import { Usuario } from './usuario.js'
+
+(function(){
+    mostrarOcultarBotones();
+    cargarUsuariosRegistrados();
+})();
+
+function mostrarOcultarBotones(){
+    const usuarioLogueado = localStorage.getItem('usuarioLogueado');
+    if (usuarioLogueado != null){
+     document.getElementById('botonLogin').style.display = 'none';
+     document.getElementById('botonRegistro').style.display = 'none';
+     const usuario = JSON.parse(usuarioLogueado);
+     document.getElementById('infoUsuario').innerHTML = '<i class="far fa-user"></i> ' + usuario.email;
+     if(usuario.tipoUsuario == 'administrador'){
+         document.getElementById('botonAdministrador').style.display = 'block';
+     }
+     document.getElementById('botonCerrarSesion').style.display = 'block';  
+     document.getElementById('infoUsuario').style.display = 'block';
+    }else{
+     document.getElementById('botonCerrarSesion').style.display = 'none';  
+     document.getElementById('infoUsuario').style.display = 'none';
+     document.getElementById('botonAdministrador').style.display = 'none';
+     document.getElementById('botonLogin').style.display = 'block';
+     document.getElementById('botonRegistro').style.display = 'block';
+    }
+    document.getElementById('botonInicio').style.display = 'block';
+}
+
+function cargarUsuariosRegistrados(){
+    if(localStorage.getItem('usuariosRegistrados') == null){
+        const objetoAdmin = new Usuario('admin', 'admin', 'admin','admin@epicgames.com','');
+        let arrayUsuarios = [objetoAdmin];
+        localStorage.setItem('usuariosRegistrados', JSON.stringify(arrayUsuarios));
+    }
+}
+
+let botonCerrarSesion = document.getElementById('botonCerrarSesion');
+botonCerrarSesion.addEventListener('click', cerrarSesion);
+
+
+function cerrarSesion(){
+    localStorage.removeItem('usuarioLogueado');
+    document.getElementById('botonLogin').style.display = '';
+    document.getElementById('botonRegistro').style.display = '';
+    document.getElementById('botonCerrarSesion').style.display = 'none';
+    document.getElementById('infoUsuario').style.display = 'none';
+    window.location.href = "/index.html";
+}
 
 window.addEventListener('load', function(){
 	new Glider(document.querySelector('.carousel__lista'), {
@@ -42,10 +91,18 @@ function traerDatos(){
         let padreDestacado = document.getElementById('juegoDestacado');
         let padreRecomendados = document.getElementById('juegosRecomendados');
         let padreDeportes = document.getElementById('juegosDeportes');
+        let padreAccion = document.getElementById('juegosAccion');
+        let padreClasicos = document.getElementById('juegosClasicos');
+        let padreOfertas = document.getElementById('ofertas');
+        let padreNuevos = document.getElementById('nuevos');
         
         padreDestacado.innerHTML ='';
         padreRecomendados.innerHTML ='';
         padreDeportes.innerHTML ='';
+        padreAccion.innerHTML ='';
+        padreClasicos.innerHTML = '';
+        padreOfertas.innerHTML ='';
+        padreNuevos.innerHTML ='';
         
         /** Busqueda destacado **/
         for(let i in listaJuegos){
@@ -70,18 +127,19 @@ function traerDatos(){
                     <h2 class="fw-bolder">${listaJuegos[i].nombre}</h2>
                     <h4 class=" my-3 lead">${listaJuegos[i].descripcion}</h4>
                     
-                    <div class="row d-flex justify-content-around container-fila-precios">
-                        <div class="col-sm-4 col-md-4 col-lg-3 fila-precios1">
+                    <div class="d-flex justify-content-start container-fila-precios">
+                        <div class="">
                             <span class="badge bg-secondary fw-bolder">-%${listaJuegos[i].descuento}</span>
                         </div>
-                        <div class="col-sm-4 col-md-4 col-lg-3 px-0 fila-precios1">
+                        <div class="px-2 ">
                             <p class=""><del>$${precioAntes}</del></p>
                         </div>
-                        <div class="col-sm-4 col-md-4 col-lg-6 px-0 fila-precios2">
+                        <div class="px-0 ">
                             <p class="fw-bolder">$${listaJuegos[i].precio}</p>    
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary">Leer mas</button>
+                    <button type="button" class="btn btn-primary" onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}">Leer mas</button>
+                    </div>
                     </div>
                 `
                 padreDestacado.innerHTML += columna;
@@ -99,7 +157,7 @@ function traerDatos(){
                     imagen = listaJuegos[i].imagen
                 }
                 let columna =`
-                    <a href="" class="text-decoration-none text-white ass">
+                    <a onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" class="text-decoration-none text-white card-recomendados">
                     <div class="carousel__elemento m-0">
                     <img src="img/${imagen}" class="d-block w-100 img-destacados" alt="Rock and Roll Hall of Fame">
                     <p>${listaJuegos[i].nombre}</p>
@@ -109,8 +167,83 @@ function traerDatos(){
                 padreRecomendados.innerHTML += columna;
             }
         }
+        /** Busqueda en ofertas **/
+        for(let i in listaJuegos){
+            if(listaJuegos[i].descuento != 0){
+                let imagen='';
+                if(listaJuegos[i].imagen === ''){
+                    /** Agregamos img por defecto **/
+                    imagen= 'imgPorDefecto.png'
+                } else{
+                    /** Img que se cargo **/
+                    imagen = listaJuegos[i].imagen
+                }
+                let columna =`
+                <a onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" class="card-novedades text-white fw-bolder text-decoration-none p-0 py-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-start">
+                        <div class="">
+                            <img src="./img/${imagen}" class="img-novedades" alt="${listaJuegos[i].nombre}">              
+                        </div>
+                        <div>
+                            <div class="px-2">
+                                <p class="m-0">${listaJuegos[i].nombre}</p>
+                            </div>
+                            <div class="px-2">
+                                <p><span class="badge bg-secondary mx-2">-%${listaJuegos[i].descuento}</span>$${listaJuegos[i].precio}</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="">
+                        <i class="fas fa-plus-circle align-middle"></i>
+                    </div>
+                </div>
+            </a>
+                `
+               padreOfertas.innerHTML += columna;
+            }
+        }
 
-        /** Busuqeda categoria deportes **/
+        /** Busqueda en nuevos **/
+        for(let i in listaJuegos){
+            if(listaJuegos[i].descuento != 0){
+                let imagen='';
+                if(listaJuegos[i].imagen === ''){
+                    /** Agregamos img por defecto **/
+                    imagen= 'imgPorDefecto.png'
+                } else{
+                    /** Img que se cargo **/
+                    imagen = listaJuegos[i].imagen
+                }
+                let columna =`
+                <a onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" class="card-novedades text-white fw-bolder text-decoration-none p-0 py-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-start">
+                        <div class="">
+                            <img src="./img/${imagen}" class="img-novedades" alt="${listaJuegos[i].nombre}">              
+                        </div>
+                        <div>
+                            <div class="px-2">
+                                <p class="m-0">${listaJuegos[i].nombre}</p>
+                            </div>
+                            <div class="px-2">
+                                <p>$${listaJuegos[i].precio}</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="">
+                        <i class="fas fa-plus-circle align-middle"></i>
+                    </div>
+                </div>
+            </a>
+                `
+               padreNuevos.innerHTML += columna;
+            }
+        }
+
+        /** Busqueda categoria deportes **/
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria === 'Deportes'){
                 let imagen='';
@@ -122,18 +255,18 @@ function traerDatos(){
                     imagen = listaJuegos[i].imagen
                 }
                 let columna =`
-                    <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0">
-                    <img class="card-img-top w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
+                    <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
+                    <img class=" w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
                     <div class="card-body">
-                    <h5 class="card-title">${listaJuegos[i].nombre}<span class="badge bg-secondary">Nuevo</span></h5>
+                    <h5 class="card-title">${listaJuegos[i].nombre}<span class="m-1 badge bg-secondary">Nuevo</span></h5>
                     <p class="">${listaJuegos[i].descripcion}</p>
-                    <p class="fw-bolder">${listaJuegos[i].precio}</p>
+                    <p class="fw-bolder">$${listaJuegos[i].precio}</p>
                     <div class="d-flex justify-content-between">
                     <div>
                       <button class="btn btn-primary" onclick="agregarCarrito(this)" id="${listaJuegos[i].id}">Agregar al carrito</button>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-primary" >Leer mas</button>
+                      <button type="button" class="btn btn-primary" onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" >Leer mas</button>
                     </div>
                     </div>
                     </div>
@@ -142,7 +275,78 @@ function traerDatos(){
                 padreDeportes.innerHTML += columna;
             }
         }
+
+        /** Busuqeda de categoria accion **/
+        for(let i in listaJuegos){
+            if(listaJuegos[i].categoria === 'Accion'){
+                let imagen='';
+                if(listaJuegos[i].imagen === ''){
+                    /** Agregamos img por defecto **/
+                    imagen= 'imgPorDefecto.png'
+                } else{
+                    /** Img que se cargo **/
+                    imagen = listaJuegos[i].imagen
+                }
+                let columna =`
+                    <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
+                    <img class=" w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
+                    <div class="card-body">
+                    <h5 class="card-title">${listaJuegos[i].nombre}<span class="m-1 badge bg-secondary">Nuevo</span></h5>
+                    <p class="">${listaJuegos[i].descripcion}</p>
+                    <p class="fw-bolder">$${listaJuegos[i].precio}</p>
+                    <div class="d-flex justify-content-between">
+                    <div>
+                      <button class="btn btn-primary" onclick="agregarCarrito(this)" id="${listaJuegos[i].id}">Agregar al carrito</button>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-primary" onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" >Leer mas</button>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                `
+                padreAccion.innerHTML += columna;
+            }
+        }
+
+        /** Busuqeda de categoria clasicos **/
+        for(let i in listaJuegos){
+            if(listaJuegos[i].categoria === 'Clasicos'){
+                let imagen='';
+                if(listaJuegos[i].imagen === ''){
+                    /** Agregamos img por defecto **/
+                    imagen= 'imgPorDefecto.png'
+                } else{
+                    /** Img que se cargo **/
+                    imagen = listaJuegos[i].imagen
+                }
+                let columna =`
+                    <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
+                    <img class=" w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
+                    <div class="card-body">
+                    <h5 class="card-title">${listaJuegos[i].nombre}<span class="m-1 badge bg-secondary">Nuevo</span></h5>
+                    <p class="">${listaJuegos[i].descripcion}</p>
+                    <p class="fw-bolder">$${listaJuegos[i].precio}</p>
+                    <div class="d-flex justify-content-between">
+                    <div>
+                      <button class="btn btn-primary" onclick="agregarCarrito(this)" id="${listaJuegos[i].id}">Agregar al carrito</button>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-primary" onclick="detalle(${listaJuegos[i].id})" id="${listaJuegos[i].id}" >Leer mas</button>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                `
+                padreClasicos.innerHTML += columna;
+            }
+        }
     }
+}
+
+window.detalle =function(id){
+    localStorage.setItem('detallesKEY',JSON.stringify(id))
+    window.location.href = '/detalles.html'
 }
 
 /** Carrito **/
@@ -171,4 +375,8 @@ window.agregarCarrito= function(elemento){
         }
     }
     console.log(carritoArray)
+}
+
+window.verMas = function(){
+    window.location.href = ('/error404.html')
 }
