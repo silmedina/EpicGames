@@ -59,7 +59,7 @@
     </nav>
   </header>
   <main class="bg-dark">
-    <section class="container">
+    <section class="container  p-0">
       <article class="row pt-4 pb-3 d-flex justify-content-end">
         <div class="col-sm-5 col-md-4 d-flex justify-content-end carrito">
           <button type="button" class="btn btn-primary">
@@ -67,7 +67,7 @@
             <span class="visually-hidden">unread messages</span>
           </button>
         </div>
-        <div class="col-md-4 p-0">
+        <div class="col col-sm-11 col-md-4  p-0">
           <form class="form-buscar">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
           </form>
@@ -76,9 +76,8 @@
     </section>
 
     <!-- Destacado -->
-    <section class="container border border-1">
+    <section class="container border border-1 p-0">
       <div class="row" id="juegoDestacado">
-        
 
       </div>
     </section>
@@ -104,9 +103,10 @@
     <!-- En oferta y nuevos -->
     <section class="container text-white">
       <h3 class="p-0 my-3">Novedades y ofertas</h3>
-      <article class="row justify-content-between" id="">
-        <div class="col col-sm-12 col-md-5 p-3 panel-novedades">
-          <div class="d-flex justify-content-between">
+      <article class="row d-flex border border-danger" id="">
+        <!-- Columna 1 -->
+        <div class="col-sm-12 col-md-6 p-3 border border-warning panel-novedades">
+          <!-- <div class="d-flex justify-content-between">
             <div class="">
               <h5>En oferta</h5>
             </div>
@@ -128,32 +128,11 @@
               </div>
             </div>
           </a>
-          </div>
+          </div> -->
         </div>
-        <div class="col col-sm-12 col-md-5 p-3 panel-novedades">
-          <div class="d-flex justify-content-between">
-            <div class="">
-              <h5>En oferta</h5>
-            </div>
-            <div class="p-0">
-              <button type="button" class="btn btn-link btn-sm text-white text-decoration-none border border-1" onclick="" id="" >Ver mas</button>
-            </div>
-          </div>
-          <div class="justify-content-between py-2">
-            <a href="" class="card-novedades text-white fw-bolder text-decoration-none">
-            <div class="col col-sm-12 d-flex justify-content-lg-start align-items-center">
-              <div class="col col-sm-2">
-                <img src="./img/infamous.jpg" class="img-novedades" alt="">
-              </div>
-              <div class="col col-sm-8">
-                <p>Juego</p>
-              </div>
-              <div class="col col-sm-2">
-                <i class="fas fa-plus-circle align-middle"></i>
-              </div>
-            </div>
-          </a>
-          </div>
+        <!-- Columna 2 -->
+        <div class="col-sm-12 col-md-6 p-3 border border-warning panel-novedades">
+          
         </div>
       </article>
     </section>

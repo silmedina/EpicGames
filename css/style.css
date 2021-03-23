@@ -184,15 +184,7 @@
     }
 }
 
-/** Index **/
-.img-destacado{
-	height: 400px;
-	object-fit: cover;	
-}
-.img-destacados{
-	height: 120px;
-	object-fit: cover;
-}
+/***** Index *****/
 .img-novedades{
     height: 50px;
     object-fit: cover;
@@ -201,33 +193,21 @@
 	height: 250px;
 	object-fit: cover;
 }
-.panel-novedades{
-    background-color: #555353;
-    border-radius: 3px;
-}
-.card-novedades:hover{
-    background-color: #4d4d4d;
-    border-radius: 5px;
-}
+
 .card-deportes{
     animation-name: card-1;
     animation-duration: 2s;
 }
-
-@media screen and (max-width: 576px) {
-	.container-fila-precios{
-		display: flex;
-		justify-content: start;
-	}
-	.fila-precios1{
-		width: 20%;
-	}
-	.fila-precios2{
-		width: 60%;
-	}
-
+/** Destacado **/
+.img-destacado{
+	height: 400px;
+	object-fit: cover;	
 }
-
+/** Carousel recomendados**/
+.img-destacados{
+	height: 120px;
+	object-fit: cover;
+}
 .carousel__contenedor {
 	position: relative;
 }
@@ -263,8 +243,29 @@
 .td-btn{
     align-items: center;
 }
+/** Ofertas y nuevos **/
+.panel-novedades{
+    background-color: #555353;
+    border-radius: 3px;
+}
+.card-novedades:hover{
+    background-color: #4d4d4d;
+    border-radius: 5px;
+}
 
-/** Admin **/
+@media screen and (max-width: 576px) {
+	.container-fila-precios{
+		display: flex;
+		justify-content: start;
+	}
+}
+@media screen and (max-width: 768px){
+    .carrito{
+        padding-right: 0px;
+        padding-bottom: 8px;
+    }
+}
+/***** Admin *****/
 .img-recomendados{
     height: 200px;
 }

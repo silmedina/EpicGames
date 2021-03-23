@@ -110,14 +110,14 @@ function traerDatos(){
                     <h2 class="fw-bolder">${listaJuegos[i].nombre}</h2>
                     <h4 class=" my-3 lead">${listaJuegos[i].descripcion}</h4>
                     
-                    <div class="row d-flex justify-content-around container-fila-precios">
-                        <div class="col-sm-4 col-md-4 col-lg-3 fila-precios1">
+                    <div class="d-flex justify-content-start container-fila-precios">
+                        <div class="">
                             <span class="badge bg-secondary fw-bolder">-%${listaJuegos[i].descuento}</span>
                         </div>
-                        <div class="col-sm-4 col-md-4 col-lg-3 px-0 fila-precios1">
+                        <div class="px-2 ">
                             <p class=""><del>$${precioAntes}</del></p>
                         </div>
-                        <div class="col-sm-4 col-md-4 col-lg-6 px-0 fila-precios2">
+                        <div class="px-0 ">
                             <p class="fw-bolder">$${listaJuegos[i].precio}</p>    
                         </div>
                     </div>
@@ -166,7 +166,7 @@ function traerDatos(){
                 }
                 let columna =`
                     <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
-                    <img class="card-img-top w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
+                    <img class=" w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
                     <div class="card-body">
                     <h5 class="card-title">${listaJuegos[i].nombre}<span class="badge bg-secondary">Nuevo</span></h5>
                     <p class="">${listaJuegos[i].descripcion}</p>
@@ -199,7 +199,7 @@ function traerDatos(){
                 }
                 let columna =`
                     <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
-                    <img class="card-img-top w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
+                    <img class=" w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
                     <div class="card-body">
                     <h5 class="card-title">${listaJuegos[i].nombre}<span class="badge bg-secondary">Nuevo</span></h5>
                     <p class="">${listaJuegos[i].descripcion}</p>
@@ -232,7 +232,7 @@ function traerDatos(){
                 }
                 let columna =`
                     <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
-                    <img class="card-img-top w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
+                    <img class=" w-100 img-deportes" src="img/${imagen}" alt="${listaJuegos[i].nombre}">
                     <div class="card-body">
                     <h5 class="card-title">${listaJuegos[i].nombre}<span class="badge bg-secondary">Nuevo</span></h5>
                     <p class="">${listaJuegos[i].descripcion}</p>
