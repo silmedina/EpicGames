@@ -11,176 +11,189 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Epic Games</title>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container p-0">
-            <a class="navbar-brand" href="#">LOGO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a id="botonInicio" class="nav-link " aria-current="page" href="index.html" style="display: none;">Inicio</a>
-                </li>
-                <li class="nav-item" >
-                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a id="botonAdministrador" class="nav-link" href="./admin.html"style="display: none;">Administrador</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a  id="botonRegistro" class="nav-link active" href="./registro.html"style="display: none;">Registro</a>
-                </li>
-                <li class="nav-item">
-                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a id="botonLogin" class="nav-link" href="./login.html"style="display: none;">Login</a>
-                  </div>
-                </li>
-                <li class="nav-item" >
-                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                   <div id="infoUsuario"  class="nav-link"style="display: none;"></div>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a id="botonCerrarSesion" class="nav-link" href="javascript:void(0);"style="display: none;">Cerrar Sesion</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-<main>
-    <form action="" class="formulario" id="formulario">
-        <!-- Usuario -->
-        <div class="formulario-grupo" id="grupo-usuario">
-            <label for="usuario" class="formulario-label">Usuario</label>
-            <div class="formulario-grupo-input">
-                <input type="text" class="formulario-input" name="usuario" id="usuario" placeholder="Usuario">
-                <i class="formulario-validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario-input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros,
-                letras y guion bajo.</p>
-        </div>
-
-        <!-- Nombre -->
-        <div class="formulario-grupo" id="grupo-nombre">
-            <label for="nombre" class="formulario-label">Nombre</label>
-            <div class="formulario-grupo-input">
-                <input type="text" class="formulario-input" name="nombre" id="nombre" placeholder="Nombre">
-                <i class="formulario-validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario-input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros y
-                letras.</p>
-        </div>
-
-        <!-- Contraseña -->
-        <div class="formulario-grupo" id="grupo-password">
-            <label for="password" class="formulario-label">Contraseña</label>
-            <div class="formulario-grupo-input">
-                <input type="password" class="formulario-input" name="password" id="password"
-                       placeholder="Contraseña">
-                <i class="formulario-validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario-input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-        </div>
-
-        <!-- Contraseña 2 -->
-        <div class="formulario-grupo" id="grupo-password2">
-            <label for="password2" class="formulario-label">Repetir Contraseña</label>
-            <div class="formulario-grupo-input">
-                <input type="password" class="formulario-input" name="password2" id="password2"
-                       placeholder="Repetir Contraseña">
-                <i class="formulario-validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario-input-error">Ambas contraseñas deben ser iguales.</p>
-        </div>
-
-        <!-- Correo Electronico -->
-        <div class="formulario-grupo" id="grupo-correo">
-            <label for="correo" class="formulario-label">Correo Electrónico</label>
-            <div class="formulario-grupo-input">
-                <input type="email" class="formulario-input" name="correo" id="correo" placeholder="correo@correo.com">
-                <i class="formulario-validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario-input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion
-                bajo.</p>
-        </div>
-
-        <!-- Teléfono -->
-        <div class="formulario-grupo" id="grupo-telefono">
-            <label for="telefono" class="formulario-label">Teléfono</label>
-            <div class="formulario-grupo-input">
-                <input type="text" class="formulario-input" name="telefono" id="telefono" placeholder="381333333">
-                <i class="formulario-validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario-input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
-        </div>
-
-        <!-- Terminos y Condiciones -->
-        <div class="formulario-grupo" id="grupo-terminos">
-            <label class="formulario-label">
-                <input class="formulario-checkbox" type="checkbox" name="terminos" id="terminos">
-                Acepto los Terminos y Condiciones
-            </label>
-        </div>
-
-        <div class="formulario-mensaje" id="formulario-mensaje">
-            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el registro correctamente.
-            </p>
-        </div>
-
-        <div class="formulario-grupo formulario-grupo-btn-enviar">
-            <button type="submit" class="formulario-btn">Enviar</button>
-            <p class="formulario-mensaje-exito" id="formulario-mensaje-exito">Formulario enviado exitosamente!</p>
-        </div>
-    </form>
-</main>
-<footer class="bg-dark text-light pt-4">
-  <section>
-      <article class="row">
-          <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-              <img src="img/logo rolling code.png" alt="logo pagina" class="w-25 my-2 ">
-              <p >&copy; Rolling Games</p>
-          </div>
-          <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
-              <ul class="lista text-center ">
-                  <li><a href="index.html" class="text-light">Inicio</a></li>
-                  <li><a href="contactos.html" class="text-light">Contacto</a></li>
-                  <li><a href="about.html" class="text-light">Acerca de nosotros</a></li>
-                  <li><a href="registro.html"class="text-light" >Registrate</a></li>
-                  
-                  
-
-              </ul>
-          </div>
-          <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
-              <ul class="lista text-center ">
-                  <li><a href="" class="text-light">Politica de privacidad</a></li>
-                  <li><a href=""class="text-light " >Compañia</a></li>
-                  <li><a href=""class="text-light " >Recursos</a></li>
-                  <li><a href="" class="text-light">Más información</a></li>
-                  
-              </ul>
-          </div>
-          <div class="col-sm-12 col-md-3 col-lg-3 text-center my-5 ">
-              <div>
-                  <p>Encontranos en:</p>
-                  <a href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x text-light "></i></a>
-                  <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
-                  <a href="https://twitter.com/" target="_blank "><i class="fab fa-twitter-square fa-2x text-light mr-3"></i></a>
-                  <a href="https://github.com/silmedina/EpicGames"><i class="fab fa-github-square fa-2x text-light"></i></a>
+<body class="bg-dark bg-gradient scroll-login-registro" >
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container p-0">
+        <a class="navbar-brand" href="#"><img class="logo-nav" src="./img/LOGO.jpeg" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a id="botonInicio" class="nav-link active" aria-current="page" href="index.html" style="display: none;">Inicio</a>
+            </li>
+            <li class="nav-item" >
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a id="botonAdministrador" class="nav-link" href="./admin.html"style="display: none;">Administrador</a>
               </div>
+            </li>
+            <li class="nav-item">
+              <a  id="botonRegistro" class="nav-link" href="./registro.html"style="display: none;">Registro</a>
+            </li>
+            <li class="nav-item">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a id="botonLogin" class="nav-link" href="./login.html"style="display: none;">Login</a>
+              </div>
+            </li>
+            <li class="nav-item" >
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+               <div id="infoUsuario"  class="nav-link"style="display: none;"></div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a id="botonCerrarSesion" class="nav-link" href="javascript:void(0);"style="display: none;">Cerrar Sesion</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="mt-5 mb-5 bg-login-registro">
+      <form onsubmit="registrarUsuario(event)" class="formulario" id="formulario">
+        <div class="formulario-grupo" id="grupo-usuario2">
+          <h5><i class="fas fa-user"></i> Registrate</h5>
+        </div>
+        <div class="formulario-grupo" id="grupo-usuario3">
+        </div>
+    
+        <!-- Usuario -->
+          <div class="formulario-grupo" id="grupo-usuario">
+              <label for="usuario" class="formulario-label">Usuario</label>
+              <div class="formulario-grupo-input">
+                  <input type="text" class="formulario-input" name="usuario" id="usuario" placeholder="Usuario">
+                  <i class="formulario-validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario-input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros,
+                  letras y guion bajo.</p>
           </div>
-      </article>
-  </section>
-</footer>
+
+          <!-- Nombre -->
+          <div class="formulario-grupo" id="grupo-nombre">
+              <label for="nombre" class="formulario-label">Nombre</label>
+              <div class="formulario-grupo-input">
+                  <input type="text" class="formulario-input" name="nombre" id="nombre" placeholder="Nombre">
+                  <i class="formulario-validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario-input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros y
+                  letras.</p>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="formulario-grupo" id="grupo-password">
+              <label for="password" class="formulario-label">Contraseña</label>
+              <div class="formulario-grupo-input">
+                  <input type="password" class="formulario-input" name="password" id="password"
+                        placeholder="Contraseña">
+                  <i class="formulario-validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario-input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+          </div>
+
+          <!-- Contraseña 2 -->
+          <div class="formulario-grupo" id="grupo-password2">
+              <label for="password2" class="formulario-label">Repetir Contraseña</label>
+              <div class="formulario-grupo-input">
+                  <input type="password" class="formulario-input" name="password2" id="password2"
+                        placeholder="Repetir Contraseña">
+                  <i class="formulario-validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario-input-error">Ambas contraseñas deben ser iguales.</p>
+          </div>
+
+          <!-- Correo Electronico -->
+          <div class="formulario-grupo" id="grupo-correo">
+              <label for="correo" class="formulario-label">Correo Electrónico</label>
+              <div class="formulario-grupo-input">
+                  <input type="email" class="formulario-input" name="correo" id="correo" placeholder="correo@correo.com">
+                  <i class="formulario-validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario-input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion
+                  bajo.</p>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="formulario-grupo" id="grupo-telefono">
+              <label for="telefono" class="formulario-label">Teléfono</label>
+              <div class="formulario-grupo-input">
+                  <input type="text" class="formulario-input" name="telefono" id="telefono" placeholder="381333333">
+                  <i class="formulario-validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario-input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+          </div>
+
+          <!-- Terminos y Condiciones -->
+          <div class="formulario-grupo" id="grupo-terminos">
+              <label class="formulario-label">
+                  <input class="formulario-checkbox" type="checkbox" name="terminos" id="terminos">
+                  Acepto los Terminos y Condiciones
+              </label>
+          </div>
+
+          <div class="formulario-mensaje" id="formulario-mensaje">
+              <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el registro correctamente.
+              </p>
+          </div>
+
+          <div class="formulario-grupo formulario-grupo-btn-enviar">
+              <button type="submit" class="formulario-btn">Enviar</button>
+              <p class="formulario-mensaje-exito" id="formulario-mensaje-exito">Formulario enviado exitosamente!</p>
+          </div>
+      </form>
+  </main>
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light pt-4 footer">
+    <section>
+        <article class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 text-center">
+                <img src="img/LOGO.jpeg" alt="logo pagina" class="w-25 my-2 ">
+                <p >&copy; Rolling Games</p>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
+                <ul class="lista text-center ">
+                    <li><a href="index.html" class="text-light">Inicio</a></li>
+                    <li><a href="contactos.html" class="text-light">Contacto</a></li>
+                    <li><a href="about.html" class="text-light">Acerca de nosotros</a></li>
+                    <li><a href="registro.html"class="text-light">Registrate</a></li>
+                    
+                    
+
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
+                <ul class="lista text-center ">
+                    <li><a href="error404.html" class="text-light">Politica de privacidad</a></li>
+                    <li><a href="error404.html"class="text-light ">Compañia</a></li>
+                    <li><a href="error404.html"class="text-light ">Recursos</a></li>
+                    <li><a href="error404.html" class="text-light">Más información</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-5 ">
+                <div>
+                    <p>Encontranos en:</p>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x text-light "></i></a>
+                    <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
+                    <a href="https://twitter.com/" target="_blank "><i class="fab fa-twitter-square fa-2x text-light mr-3"></i></a>
+                    <a href="https://github.com/silmedina/EpicGames"><i class="fab fa-github-square fa-2x text-light"></i></a>
+                </div>
+            </div>
+        </article>
+    </section>
+  </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-<!-- <script src="js/app.js"></script> -->
-<script src="js/validaciones.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>      
+        <script
+      src="https://kit.fontawesome.com/27ea71087c.js"
+      crossorigin="anonymous"
+    ></script>  
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/registro.js"></script>
 </body>

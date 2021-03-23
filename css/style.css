@@ -1,7 +1,15 @@
-.footer{
-    width: 100%;
-    bottom: 0;
-    position: fixed;
+@media screen and (min-width: 768px) {
+    .footer{
+        width: 100%;
+        bottom: 0;
+        position: fixed;
+    }
+}
+a{
+    text-decoration: none;
+}
+.logo-nav{
+    width: 40%;
 }
 .row{
     margin: 0;
@@ -26,6 +34,12 @@
 }
 .button-color{
     background-color: #D7443F;
+}
+.text-area-resize{
+    resize: none;
+}
+.contact-btn{
+    background-color: #000;
 }
 /* Formulario  */
 
@@ -181,7 +195,7 @@
 
     .formulario-btn {
         width: 100%;
-    }
+    } 
 }
 
 /***** Index *****/
@@ -497,7 +511,14 @@ margin: 0 auto;
     border: 1px solid rgba(121, 16, 16, 0.822); 
     width: 100%;
 }
-
+/* LOGIN Y REGISTRO*/
+.bg-login-registro{
+    min-height: 3000px;
+    
+}
+.scroll-login-registro{
+    overflow-y: hidden;
+}
 
 
 

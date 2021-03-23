@@ -4,7 +4,7 @@ function login(event){
     let password = document.getElementById('password');
     if (
         validarCamposRequeridos() && 
-        // validarEmail(email) && 
+        validarEmail(email) && 
         validarPassword(password)
         ) {
             if(esAdministrador(email.value,password.value)){
@@ -12,18 +12,33 @@ function login(event){
                 window.location.href = "/UserAdmin.html";
                
             }else{
-                if(usuarioExiste(email.value,password.value)){
-                    guardarUsuarioLocalStorage(email,'usuario');
-                    window.location.href = "/index.html";
-                }else{
-                   alert("usuario o contraseña incorrecta");
+                let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados'));
+                let usuarioPorEmail = buscarUsuarioPorEmail(usuariosRegistrados,email.value);
+                if(typeof usuarioPorEmail === 'undefined'){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'El correo ingresado no existe!',
+                        footer: '<a href="registro.html">Ir a la pagina de registro?</a>'
+                    })
+                } else{
+                    if(password.value === usuarioPorEmail.password){
+                        guardarUsuarioLocalStorage(email,'usuario');
+                        window.location.href = "/index.html";
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Password incorrecto!'
+                        })
+                    }
                 }
             }
     }
 }
 
 function guardarUsuarioLocalStorage(email,tipousuario){
-    const objetoUsuario = {'email': email.value, 'tipoUsuario':tipousuario };
+    const objetoUsuario = {'email': email.value, 'tipoUsuario': tipousuario };
     if(localStorage.getItem('usuarioLogueado') != null){
         localStorage.removeItem('usuarioLogueado');
     }
@@ -32,19 +47,21 @@ function guardarUsuarioLocalStorage(email,tipousuario){
 }
 
 function esAdministrador(email,password){
-    if (email ==='admin@epicgames.com' && password ==='admin') {
+    let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados'));
+    let usuarioAdmin = buscarUsuarioPorEmail(usuariosRegistrados,'admin@epicgames.com');
+
+    if (email === usuarioAdmin.email && password === usuarioAdmin.password) {
         return true;
     }else{
         return false;
     }
 }
 
-function usuarioExiste(email,password){
-    if (email ==='silpato@gmail.com' && password ==='1234') {
-        return true;
-    }else{
-        return false;
-    }
+function  buscarUsuarioPorEmail(usuariosRegistrados, email){
+    let usuario = usuariosRegistrados.find(usuario=> {
+        return usuario.email === email
+      });
+    return usuario;
 }
 
 
@@ -112,4 +129,24 @@ function resetearFormulario() {
 
     inputEmail.className = 'form-control';
     inputPassword.className = 'form-control';
+}
+
+const modalOlvidoPassword = new bootstrap.Modal(document.getElementById('modalOlvidoPassword'));
+function abrirModal(){
+    let campoEmailRecuperar = document.getElementById('emailRecuperar');
+    campoEmailRecuperar.value = '';
+    campoEmailRecuperar.className = 'form-control';
+    modalOlvidoPassword.show()
+}
+
+window.recuperarPassword = function(event){
+    event.preventDefault();
+    if (validarEmail(document.getElementById('emailRecuperar'))){
+            modalOlvidoPassword.hide();
+            Swal.fire({
+                icon: 'success',
+                title: 'Exito',
+                text: 'Se envio satisfactoriamente el correo!'
+            })
+        }
 }
