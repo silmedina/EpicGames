@@ -68,7 +68,7 @@
               <div class="formulario-grupo" id="grupo-usuario">
                 <label for="usuario" class="formulario-label">Email *</label>
                 <div class="formulario-grupo-input">
-                    <input type="text" class="formulario-input" name="usuario" onblur="validarEmail(this)" id="email" placeholder="Juan@gmail.com">
+                    <input type="email" class="formulario-input" onblur="validarEmail(this)" id="email" placeholder="Juan@gmail.com">
                     <i class="formulario-validacion-estado fas fa-times-circle"></i>
                     <div class="invalid-feedback">
                       Debe ingresar un email valido
@@ -78,10 +78,10 @@
               <div class="formulario-grupo" id="grupo-nombre">
                 <label for="nombre" class="formulario-label">Contraseña *</label>
                 <div class="formulario-grupo-input">
-                    <input type="password" class="formulario-input" onblur="validarPassword(this)" name="nombre" id="password" >
+                    <input type="password" class="formulario-input" onblur="validarPassword(this)" id="password" >
                     <i class="formulario-validacion-estado fas fa-times-circle"></i>
                     <div class="invalid-feedback">
-                      Debe ingresar una Contraseña de por lo menos 8 caracteres
+                      Debe ingresar una Contraseña de por lo menos 4 caracteres
                     </div>
                 </div>
             </div>
