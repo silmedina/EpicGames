@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="Keywords" content="">
@@ -14,90 +13,78 @@
   <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
   <title>Epic Games</title>
 </head>
-
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container p-0">
-        <a class="navbar-brand" href="#">LOGO</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a id="botonInicio" class="nav-link " aria-current="page" href="index.html" style="display: none;">Inicio</a>
-            </li>
-            <li class="nav-item" >
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a id="botonAdministrador" class="nav-link active" href="./admin.html"style="display: none;">Administrador</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a  id="botonRegistro" class="nav-link" href="./registro.html"style="display: none;">Registro</a>
-            </li>
-            <li class="nav-item">
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a id="botonLogin" class="nav-link" href="./login.html"style="display: none;">Login</a>
-              </div>
-            </li>
-            <li class="nav-item" >
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-               <div id="infoUsuario"  class="nav-link"style="display: none;"></div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a id="botonCerrarSesion" class="nav-link" href="javascript:void(0);"style="display: none;">Cerrar Sesion</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main class="bg-dark">
-    <div class="container">
-      <div class="text-white fw-bolder py-3">
-        <h3>Administracion de juegos</h3>
-      </div>
-      <section class="py-3 text-white">
-        <div class="row justify-content-around align-items-center mx-0">
-          <div class="col-sm-10 p-0">
-            <h5>Listado de juegos</h5>
-          </div>
-          <div class="col-sm-2 p-0 d-flex justify-content-end">
-            <button type="button" class="btn btn-primary" id="btn-agregar">Agregar</button>
-          </div>
-        </div>
-        <div class="table-responsive my-3">
-          <table class="table table-dark table-striped table-bordered table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
-                <th style="width:500px" scope="col">Descripcion</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Imagen</th>
-                <th scope="col">- %</th>
-                <th scope="col">Precio</th>
-                <!-- <th scope="col" >Link video</th> -->
-                <th scope="col">Publicado</th>
-                <th scope="col"><i class="far fa-star"></i></th>
-                <th id="aa" scope="col">Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="tablaJuegos">
-              
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </div>
-  </main>
+    <header>
 
-  <!-- Modal Formulario -->
+    </header>
+    <main class="bg-dark">
+        <div class="container">
+            <div class="text-white fw-bolder py-3">
+                <h3>Administrador general</h3>
+            </div>
+            <!-- Seccion de juegos -->
+            <section class="py-3 text-white">
+                <div class="row justify-content-around align-items-center mx-0">
+                    <div class="col-sm-10 p-0">
+                        <h5>Listado de juegos</h5>
+                    </div>
+                    <div class="col-sm-2 p-0 d-flex justify-content-end">
+                        <button class="btn btn-primary" id="btn-agregar" type="button">Agregar</button>
+                    </div> 
+                </div>
+                <div class="table-responsive my-3">
+                    <table class="table table-dark table-striped table-bordered table-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col">Id</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Descripcion</th>
+                          <th scope="col">Categoria</th>
+                          <th scope="col">Imagen</th>
+                          <th scope="col">- %</th>
+                          <th scope="col">Precio</th>
+                          <th scope="col" width="1px">Link video</th>
+                          <th scope="col">Publicado</th>
+                          <th scope="col"><i class="far fa-star"></i></th>
+                          <th id="aa" scope="col">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tablaJuegos">
+                        
+                      </tbody>
+                    </table>
+                  </div>
+            </section>
+
+            <!-- Seccion de usuarios -->
+            <section class="py-3 text-white">
+                <div class="row justify-content-around align-items-center mx-0">
+                    <div class="col-sm-12 p-0">
+                        <h5>Listado de usuarios</h5>
+                    </div> 
+                </div>
+                <div class="table-responsive my-3">
+                    <table class="table table-dark table-striped table-bordered table-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col">Usuario</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Contraseña</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Telefono</th>
+                          <th scope="col">Validar</th>
+                          <th id="aa" scope="col">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tablaJuegos">
+                        
+                      </tbody>
+                    </table>
+                  </div>
+            </section>
+        </div>
+    </main>
+    <!-- Modal Formulario -->
   <div class="modal fade" id="modal-juegos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -220,52 +207,11 @@
     </div>
 </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-dark text-light pt-4">
-    <section>
-        <article class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-                <img src="img/logo rolling code.png" alt="logo pagina" class="w-25 my-2 ">
-                <p >&copy; Rolling Games</p>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
-                <ul class="lista text-center ">
-                    <li><a href="index.html" class="text-light">Inicio</a></li>
-                    <li><a href="contactos.html" class="text-light">Contacto</a></li>
-                    <li><a href="about.html" class="text-light">Acerca de nosotros</a></li>
-                    <li><a href="registro.html"class="text-light" >Registrate</a></li>
-                    
-                    
-
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
-                <ul class="lista text-center ">
-                    <li><a href="" class="text-light">Politica de privacidad</a></li>
-                    <li><a href=""class="text-light " >Compañia</a></li>
-                    <li><a href=""class="text-light " >Recursos</a></li>
-                    <li><a href="" class="text-light">Más información</a></li>
-                    
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-5 ">
-                <div>
-                    <p>Encontranos en:</p>
-                    <a href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x text-light "></i></a>
-                    <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
-                    <a href="https://twitter.com/" target="_blank "><i class="fab fa-twitter-square fa-2x text-light mr-3"></i></a>
-                    <a href="https://github.com/silmedina/EpicGames"><i class="fab fa-github-square fa-2x text-light"></i></a>
-                </div>
-            </div>
-        </article>
-    </section>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-  <script type='module' src="js/admin.js"></script>
-  <script src="js/validaciones.js"></script>
+    <script type='module' src="js/admin.js"></script>
+    <script src="js/validaciones.js"></script>
 </body>
-
 </html>

@@ -1,240 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="Keywords" content="">
     <meta name="author" content="">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/27ea71087c.js" crossorigin="anonymous"></script>
-    <title>Epic Games</title>   
+    <title>Epic Games</title>
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.2/dist/sweetalert2.all.min.js"></script>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container">
-            <a class="navbar-brand" href="#">Rolling Games</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Registro</a>
-                </li>
-                <li class="nav-item">
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-secondary me-md-2" type="button">Login</button>
-                      </div>
-                  </li>
-              </ul>
+            <div class="container">
+                <a class="navbar-brand" href="#">Rolling Games</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-secondary me-md-2" type="button">Login</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </nav>
-      </header>
-        <main class="pb-5 text-light bg-dark">
-            
-           <section>
-            <div id="carouselJuego" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/ages.jpg" class="d-block w-100" alt="ages">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/ages 2.jpg" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselJuego"  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselJuego"  data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-                </div>
-                <a href="error404.html" class="btn btn-light px-4 botones-detalles fw-bold  bg-dark text-light"><i class="fas fa-play"></i>
-                    Reproducir</a>
-                    <button class="btn btn-outline-light rounded-circle botones-detalles  bg-dark" title="Agregar a Mi lista"><i
-                        class="fas fa-plus"></i></button>
-                <button class=" btn btn-outline-light rounded-circle botones-detalles  bg-dark" title="Me gusta"><i
-                        class="far fa-thumbs-up"></i></button>
-                <button class=" btn btn-outline-light rounded-circle block botones-detalles  bg-dark" title="No es para mí"><i
-                        class="far fa-thumbs-down"></i></button>
-            </section>
-          
-            <section class="row justify-content-center text-light">
-                <section class="col-sm-12 col-md-7 col-lg-9 grande px-4">
-                    <article class="d-flex">
-                        <p class="text-success fw-bold text-light ">98% recomendado para ti</p>
-                        <p class="mx-2 text-light">2020</p>
-                        <p class="border border-light mx-2 px-2 text-light d-flex flex-direction-column align-items-center">13+</p>
-                        <p class="mx-2 text-warning celular"><strong>Nuevos juegos</strong></p>
-                    </article>
-                    <article >
-                        <p class="fw-bold text-light"> Age of Empires (también conocido como Age of Empires I) es un videojuego de estrategia en tiempo real para computadoras personales, el primero de la serie homónima, lanzado el 26 de octubre de 1997 y escenificado en una línea del tiempo de 3000 años, desde la temprana Edad de Piedra hasta la Edad de Hierro. El jugador tiene opción de elegir entre doce civilizaciones.</p>
-                    </article>
-                    <article>
-                        <p><span class="text-secondary">Género: </span> Acción. Estrategia en tiempo real ambientada en el año 3000 AC
-                        </p>
-                        <p><span class="text-secondary">Ediciones: </span> 18 juegos para Android, iPhone, NDS, PC, PS2.</p>
-                        <p><span class="text-secondary">Este título es: </span> De diversión y entretenimiento</p>
-                        <button class="btn btn-secondary">Comprar <a href="error404.html"></a></button>
-                    </article>
-                </section>
-            </section>
-            
-           <section class="  mt-5 ml-3">
-               <div class="juegos-recomendados contenedor">
-               <div class="contenedor-titulo-controles">
-                   <h3 class="mb-5 ">Juegos recomendados</h3>
-                   <div class="indicadores"></div>
-                   </div>
-                
-<div class="contenedor-principal">
-    <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
-    <div class="contenedor-carousel">
-        <div class="carousel">
-            <div class="juego">
-                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego1"></a>
-            </div>
-            <div class="juego" >
-                <a href="#"><img src="img/mortal kombc.jpg" alt="juego2" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/tomb.jpg" alt="juego3"></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/hitman.jpg" alt="juego4"></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/walking dead.jpg" alt="juego5"></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego6"></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/mortal kombc.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/tomb.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/hitman.jpg" alt="juego6"></a>
-            </div>
-            <div class="juego" >
-                <a href="#"><img src="img/walking dead.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/mortal kombc.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/tomb.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/hitman.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/walking dead.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/mortal kombc.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/tomb.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/hitman.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/walking dead.jpg" alt="juego6" ></a>
-            </div>
-            <div class="juego">
-                <a href="#"><img src="img/the_witcher_3-2546814.jpg" alt="juego6" ></a>
-            </div>
-            
+    </header>
+    <main class="pb-5 text-light bg-dark">
 
-            
-        </div>
-    </div>
-    <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
-</div>
-<section>
-    <section class="row">
-
-<h3 class="mt-5 mb-5">Proximamente en nuestra plataforma ...</h3>
-<div class="col-sm-12 col-md-6 center">
-    <iframe class="video" src="https://www.youtube.com/embed/9wmV0aJBhsU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-</div>
- 
-</section>
-               </div>
-            </div>
-        </div>
-           </section>
-        </main>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-dark text-light pt-4">
         <section>
-            <article class="row">
-                <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-                    <img src="img/logo rolling code.png" alt="logo pagina" class="w-25 my-2 ">
-                    <p >&copy; Rolling Games</p>
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
-                    <ul class="lista text-center ">
-                        <li><a href="index.html" class="text-light">Inicio</a></li>
-                        <li><a href="contactos.html" class="text-light">Contacto</a></li>
-                        <li><a href="about.html" class="text-light">Acerca de nosotros</a></li>
-                        <li><a href="registro.html"class="text-light" >Registrate</a></li>
-                        
-                        
-    
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
-                    <ul class="lista text-center ">
-                        <li><a href="" class="text-light">Politica de privacidad</a></li>
-                        <li><a href=""class="text-light " >Compañia</a></li>
-                        <li><a href=""class="text-light " >Recursos</a></li>
-                        <li><a href="" class="text-light">Más información</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-3 text-center my-5 ">
-                    <div>
-                        <p>Encontranos en:</p>
-                        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x text-light "></i></a>
-                        <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
-                        <a href="https://twitter.com/" target="_blank "><i class="fab fa-twitter-square fa-2x text-light mr-3"></i></a>
-                        <a href="https://github.com/silmedina/EpicGames"><i class="fab fa-github-square fa-2x text-light"></i></a>
+            <div id="carouselJuego" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="img-carousel">
+                    <div class="carousel-item active">
+                        <img src="img/ages.jpg" class="d-block w-100" id="" alt="ages">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/ages 2.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
-            </article>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselJuego"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselJuego"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <a href="error404.html" class="btn btn-light px-4 botones-detalles fw-bold  bg-dark text-light"><i
+                    class="fas fa-play"></i>
+                Reproducir</a>
+            <button class="btn btn-outline-light rounded-circle botones-detalles  bg-dark" title="Agregar a Mi lista"><i
+                    class="fas fa-plus"></i></button>
+            <button class=" btn btn-outline-light rounded-circle botones-detalles  bg-dark" title="Me gusta"><i
+                    class="far fa-thumbs-up"></i></button>
+            <button class=" btn btn-outline-light rounded-circle block botones-detalles  bg-dark"
+                title="No es para mí"><i class="far fa-thumbs-down"></i></button>
         </section>
-      </footer>
-   
+
+        <section class="row justify-content-center text-light">
+            <section class="col-sm-12 col-md-7 col-lg-9 grande px-4" id="juego">
+                <article class="d-flex">
+                    <p class="text-success fw-bold text-light ">98% recomendado para ti</p>
+                    <p class="mx-2 text-light">2020</p>
+                    <p class="border border-light mx-2 px-2 text-light d-flex flex-direction-column align-items-center">
+                        13+</p>
+                    <p class="mx-2 text-warning celular"><strong>Nuevos juegos</strong></p>
+                </article>
+                <article>
+                    <p class="fw-bold text-light" id="descripcion"> Age of Empires (también conocido como Age of Empires I) es un
+                        videojuego de estrategia en tiempo real para computadoras personales, el primero de la serie
+                        homónima, lanzado el 26 de octubre de 1997 y escenificado en una línea del tiempo de 3000 años,
+                        desde la temprana Edad de Piedra hasta la Edad de Hierro. El jugador tiene opción de elegir
+                        entre doce civilizaciones.</p>
+                </article>
+                <article>
+                    <p class="text-secondary">Género: <span class="text-white" id="categoria">Acción. Estrategia en tiempo real ambientada en el
+                        año 3000 AC</span> 
+                    </p>
+                    <p class="text-secondary">Ediciones: <span class="text-white">18 juegos para Android, iPhone, NDS, PC, PS2.</span> </p>
+                    <p class="text-secondary">Precio: <span class="text-white">$</span><span class="text-white" id="precioDesc">1500</span> <del><span id="precio"></span></del></p>
+                    
+                    <button class="btn btn-primary">Comprar <a href="error404.html"></a></button>
+                </article>
+            </section>
+        </section>
+
+        <section class="  mt-5 ml-3">
+            <div class="juegos-recomendados contenedor">
+                <div class="contenedor-titulo-controles">
+                    <h3 class="mb-5 ">Juegos recomendados</h3>
+                    <div class="indicadores"></div>
+                </div>
+
+                <div class="contenedor-principal">
+                    <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i
+                            class="fas fa-angle-left"></i></button>
+                    <div class="contenedor-carousel">
+                        <div class="carousel" id="carousel-recomendados">
+                        </div>
+                    </div>
+                    <button role="button" id="flecha-derecha" class="flecha-derecha"><i
+                            class="fas fa-angle-right"></i></button>
+                </div>
+                    <section class="row">
+
+                        <h3 class="mt-5 mb-5">Proximamente en nuestra plataforma</h3>
+                        <div class="col-sm-12 col-md-6 center">
+                            <iframe class="video" src="https://www.youtube.com/embed/9wmV0aJBhsU" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </section>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ac empieza el footer -->
+    <footer>
+        <footer class="bg-dark text-light">
+            <section>
+                <article class="row">
+                    <div class="col-sm-12 col-md-3 col-lg-3 text-center">
+                        <img src="img/logo rolling code.png" alt="logo pagina" class="w-25 my-2 ">
+                        <p>&copy; Rolling Games</p>
+
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
+                        <ul class="lista text-center ">
+                            <li>Inicio</li>
+                            <li>Contacto</li>
+                            <li>Acerca de nosotros</li>
+                            <li>Login / Registrate</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
+                        <ul class="lista text-center ">
+                            <li><a href="" class="text-light">Politica de privacidad</a></li>
+                            <li><a href="" class="text-light ">Compañia</a></li>
+                            <li><a href="" class="text-light ">Recursos</a></li>
+                            <li><a href="" class="text-light">Más información</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3 text-center mt-4 ">
+                        <div>
+                            <p>Encontranos en:</p>
+                            <a href=""><i class="fab fa-instagram-square fa-2x text-light "></i></a>
+                            <a href=""><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
+                            <a href="https://twitter.com/" target="_blank "><i
+                                    class="fab fa-twitter-square fa-2x text-light mr-3"></i></a>
+                            <a href=""><i class="fab fa-github-square fa-2x text-light"></i></a>
+                        </div>
+                    </div>
+
+
+
+                    </div>
+
+
+
+            </section>
+            </article>
+
+
+
+        </footer>
+    </footer>
+
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 <script src="js/detalles.js">
 
 </script>
+
 </html>
