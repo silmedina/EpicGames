@@ -1,4 +1,4 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
     .footer{
         width: 100%;
         bottom: 0;
@@ -522,7 +522,17 @@ margin: 0 auto;
     border: 1px solid rgba(121, 16, 16, 0.822); 
     width: 100%;
 }
+<<<<<<< HEAD
+/* LOGIN Y REGISTRO*/
+.bg-login-registro{
+    /* min-height: 3000px; */
+}
+.scroll-login-registro{
+    overflow-y: hidden;
+}
+=======
 
+>>>>>>> b246265cfc4ce891e653383526e76d4964d9d6ce
 
 
 

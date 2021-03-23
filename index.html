@@ -21,7 +21,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container p-0">
-        <a class="navbar-brand" href="#"><img class="logo-nav" src="./img/LOGO.jpeg" alt="logo"></a>
+        <a class="navbar-brand" href="index.html"><img class="logo-nav" src="./img/LOGO.jpeg" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
             </li>
             <li class="nav-item" >
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a id="botonAdministrador" class="nav-link" href="./admin.html"style="display: none;">Administrador</a>
+                <a id="botonAdministrador" class="nav-link" href="./UserAdmin.html"style="display: none;">Administrador</a>
               </div>
             </li>
             <li class="nav-item">
@@ -80,7 +80,27 @@
     <!-- Destacado -->
     <section class="container border border-1 p-0">
       <div class="row" id="juegoDestacado">
-
+        <div class="col-sm-7 col-md-8 p-0">
+          <img src="./img/imgPorDefecto.png" class="d-block w-100 img-destacado" alt="${listaJuegos[i].nombre}">
+          </div>
+          <div class="col-sm-5 col-md-4 text-white p-4">
+          <h2 class="fw-bolder">Nombre</h2>
+          <h4 class=" my-3 lead">Descripcion del juego</h4>
+          
+          <div class="d-flex justify-content-start container-fila-precios">
+              <div class="">
+                  <span class="badge bg-secondary fw-bolder">-N</span>
+              </div>
+              <div class="px-2 ">
+                  <p class=""><del>$1500</del></p>
+              </div>
+              <div class="px-0 ">
+                  <p class="fw-bolder">$1200</p>    
+              </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="" id="${listaJuegos[i].id}">Leer mas</button>
+          </div>
+          </div>
       </div>
     </section>
     <hr class="bg-white m-4">
@@ -93,7 +113,12 @@
         <div class="carousel">
           <div class="carousel__contenedor">
             <div class="carousel__lista center" id="juegosRecomendados">
-
+              <a id="" class="text-decoration-none text-white card-recomendados">
+                <div class="carousel__elemento m-0">
+                <img src="img/imgPorDefecto.png" class="d-block w-100 img-destacados" alt="Rock and Roll Hall of Fame">
+                <p>Nombre</p>
+                </div>
+              </a>
             </div>
           </div>
           <div role="tablist" class="carousel__indicadores"></div>
@@ -188,7 +213,38 @@
       <h3 class="p-0 my-3">Juegos de deportes</h3>
       <article class="row" id="juegosDeportes">
         <!-- Tarjetas -->
-
+        <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
+          <img class=" w-100 img-deportes" src="img/imgPorDefecto.png" alt="${listaJuegos[i].nombre}">
+          <div class="card-body">
+          <h5 class="card-title">Nombre<span class="m-1 badge bg-secondary">Nuevo</span></h5>
+          <p class="">Descripcion del juego</p>
+          <p class="fw-bolder">$1500</p>
+          <div class="d-flex justify-content-between">
+          <div>
+            <button class="btn btn-primary" onclick="agregarCarrito(this)" id="${listaJuegos[i].id}">Agregar al carrito</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary" onclick="d" id="${listaJuegos[i].id}" >Leer mas</button>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="card col-sm-12 col-md-6 bg-dark p-3 border border-0 shadow p-2 mb-2 rounded card-deportes">
+            <img class=" w-100 img-deportes" src="img/imgPorDefecto.png" alt="${listaJuegos[i].nombre}">
+            <div class="card-body">
+            <h5 class="card-title">Nombre<span class="m-1 badge bg-secondary">Nuevo</span></h5>
+            <p class="">Descripcion del juego</p>
+            <p class="fw-bolder">$1500</p>
+            <div class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-primary" onclick="" id="">Agregar al carrito</button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary" onclick="" id="${listaJuegos[i].id}" >Leer mas</button>
+            </div>
+            </div>
+            </div>
+            </div>
       </article>
     </section>
     <hr class="bg-white m-4">
