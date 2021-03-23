@@ -422,7 +422,7 @@ vertical-align: top;
 iframe{
     width: 700px;
     height: 350px;
-
+margin: 0 auto;
 }
 .botones-detalles {
     position: relative;
