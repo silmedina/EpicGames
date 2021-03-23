@@ -185,10 +185,7 @@
 }
 
 /***** Index *****/
-.img-novedades{
-    height: 50px;
-    object-fit: cover;
-}
+
 .img-deportes{
 	height: 250px;
 	object-fit: cover;
@@ -244,13 +241,19 @@
     align-items: center;
 }
 /** Ofertas y nuevos **/
+.img-novedades{
+    width: 80px;
+    height: 80px;
+    border-radius: 3px;
+}
 .panel-novedades{
-    background-color: #555353;
+    background-color:rgb(32,32,32);
     border-radius: 3px;
 }
 .card-novedades:hover{
-    background-color: #4d4d4d;
+    filter: saturate(3);
     border-radius: 5px;
+    cursor:pointer
 }
 
 @media screen and (max-width: 576px) {
@@ -258,11 +261,15 @@
 		display: flex;
 		justify-content: start;
 	}
+    
 }
 @media screen and (max-width: 768px){
     .carrito{
         padding-right: 0px;
         padding-bottom: 8px;
+    }
+    .panel-novedades{
+        margin-top: 20px;
     }
 }
 /***** Admin *****/
