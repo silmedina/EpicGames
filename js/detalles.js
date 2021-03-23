@@ -73,16 +73,20 @@ function leerDatoLocalStorage(){
             listadoJuegos = listadolocalStorage
         }
     }
+
+    padreCarousel.innerHTML ='';
+
     /** Busca coincidencia **/
     for(let i in listadoJuegos){
         if(listadoJuegos[i].id == idJuegoDetalle){
-
+            
             /** Carousel del juego **/
             let imagen =''
             if(listadoJuegos[i].imagen === ''){
                 imagen = 'imgPorDefecto.png'
             } else{
                 imagen = listadoJuegos[i].imagen
+                
             }
             let imgCarousel = `
                     <div class="carousel-item active">
@@ -92,7 +96,7 @@ function leerDatoLocalStorage(){
                         <img src="img/${imagen}" class="d-block w-100" alt="${listadoJuegos[i].nombre}">
                     </div>
             `
-            padreCarousel = imgCarousel
+            padreCarousel.innerHTML = imgCarousel
         }
     }
     /** Detalle juego **/
@@ -147,3 +151,7 @@ function leerDatoLocalStorage(){
         
     }
 leerDatoLocalStorage()
+
+window.verMas = function(){
+    window.location.href = ('/error404.html')
+}

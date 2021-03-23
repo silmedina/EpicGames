@@ -9,7 +9,7 @@ function login(event){
         ) {
             if(esAdministrador(email.value,password.value)){
                 guardarUsuarioLocalStorage(email,'administrador');
-                window.location.href = "/admin.html";
+                window.location.href = "/UserAdmin.html";
                
             }else{
                 if(usuarioExiste(email.value,password.value)){

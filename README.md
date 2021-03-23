@@ -19,7 +19,7 @@ _ En este proyecto se utilizaron las siguientes librerias:_
 -Sweet Alert2
 -Font Awesome
 -Google Fonts
-
+-Glidejs
 
 ## Autores
 

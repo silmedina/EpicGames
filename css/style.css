@@ -191,10 +191,6 @@
 	object-fit: cover;
 }
 
-.card-deportes{
-    animation-name: card-1;
-    animation-duration: 2s;
-}
 /** Destacado **/
 .img-destacado{
 	height: 400px;
