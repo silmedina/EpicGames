@@ -1,8 +1,19 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
     .footer{
         width: 100%;
         bottom: 0;
         position: fixed;
+    }
+
+    .footer-registro{
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-nav{
+        padding-left: 10px;
     }
 }
 a{
@@ -511,6 +522,7 @@ margin: 0 auto;
     border: 1px solid rgba(121, 16, 16, 0.822); 
     width: 100%;
 }
+<<<<<<< HEAD
 /* LOGIN Y REGISTRO*/
 .bg-login-registro{
     /* min-height: 3000px; */
@@ -518,6 +530,9 @@ margin: 0 auto;
 .scroll-login-registro{
     overflow-y: hidden;
 }
+=======
+
+>>>>>>> b246265cfc4ce891e653383526e76d4964d9d6ce
 
 
 
