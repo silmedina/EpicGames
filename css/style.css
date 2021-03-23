@@ -4,6 +4,17 @@
         bottom: 0;
         position: fixed;
     }
+
+    .footer-registro{
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-nav{
+        padding-left: 10px;
+    }
 }
 a{
     text-decoration: none;
@@ -511,14 +522,7 @@ margin: 0 auto;
     border: 1px solid rgba(121, 16, 16, 0.822); 
     width: 100%;
 }
-/* LOGIN Y REGISTRO*/
-.bg-login-registro{
-    min-height: 3000px;
-    
-}
-.scroll-login-registro{
-    overflow-y: hidden;
-}
+
 
 
 
