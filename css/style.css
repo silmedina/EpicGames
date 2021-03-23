@@ -1,7 +1,15 @@
-.footer{
-    width: 100%;
-    bottom: 0;
-    position: fixed;
+@media screen and (min-width: 768px) {
+    .footer{
+        width: 100%;
+        bottom: 0;
+        position: fixed;
+    }
+}
+a{
+    text-decoration: none;
+}
+.logo-nav{
+    width: 40%;
 }
 .row{
     margin: 0;
@@ -29,6 +37,9 @@
 }
 .text-area-resize{
     resize: none;
+}
+.contact-btn{
+    background-color: #000;
 }
 /* Formulario  */
 
@@ -184,7 +195,7 @@
 
     .formulario-btn {
         width: 100%;
-    }
+    } 
 }
 
 /***** Index *****/

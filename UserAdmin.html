@@ -14,8 +14,47 @@
   <title>Epic Games</title>
 </head>
 <body>
+    <!-- HEADER -->
     <header>
-
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container p-0">
+          <a class="navbar-brand" href="#"><img class="logo-nav" src="./img/LOGO.jpeg" alt="logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="botonInicio" class="nav-link active" aria-current="page" href="index.html" style="display: none;">Inicio</a>
+              </li>
+              <li class="nav-item" >
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a id="botonAdministrador" class="nav-link" href="./admin.html"style="display: none;">Administrador</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a  id="botonRegistro" class="nav-link" href="./registro.html"style="display: none;">Registro</a>
+              </li>
+              <li class="nav-item">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a id="botonLogin" class="nav-link" href="./login.html"style="display: none;">Login</a>
+                </div>
+              </li>
+              <li class="nav-item" >
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                 <div id="infoUsuario"  class="nav-link"style="display: none;"></div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a id="botonCerrarSesion" class="nav-link" href="javascript:void(0);"style="display: none;">Cerrar Sesion</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <main class="bg-dark">
         <div class="container">
