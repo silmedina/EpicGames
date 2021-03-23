@@ -30,7 +30,7 @@ function mostrarOcultarBotones(){
 
 function cargarUsuariosRegistrados(){
     if(localStorage.getItem('usuariosRegistrados') == null){
-        const objetoAdmin = new Usuario('admin', 'admin', 'admin','admin@epicgames.com','');
+        const objetoAdmin = new Usuario('admin', 'admin', 'admin','admin@epicgames.com','','Si');
         let arrayUsuarios = [objetoAdmin];
         localStorage.setItem('usuariosRegistrados', JSON.stringify(arrayUsuarios));
     }
@@ -95,8 +95,7 @@ function traerDatos(){
         let padreClasicos = document.getElementById('juegosClasicos');
         let padreOfertas = document.getElementById('ofertas');
         let padreNuevos = document.getElementById('nuevos');
-        
-        padreDestacado.innerHTML ='';
+   
         padreRecomendados.innerHTML ='';
         padreDeportes.innerHTML ='';
         padreAccion.innerHTML ='';
@@ -107,7 +106,7 @@ function traerDatos(){
         /** Busqueda destacado **/
         for(let i in listaJuegos){
             if(listaJuegos[i].destacado == 'Si'){
-               
+                padreDestacado.innerHTML ='';
                 let  p =(listaJuegos[i].precio * listaJuegos[i].descuento)/100;
                 let precioAntes =parseInt(listaJuegos[i].precio) + p
                 
@@ -142,7 +141,7 @@ function traerDatos(){
                     </div>
                     </div>
                 `
-                padreDestacado.innerHTML += columna;
+               padreDestacado.innerHTML += columna;
             }
         }
         /** Busqueda recomendados **/
@@ -245,8 +244,9 @@ function traerDatos(){
 
         /** Busqueda categoria deportes **/
         for(let i in listaJuegos){
-            if(listaJuegos[i].categoria === 'Deportes'){
+            if(listaJuegos[i].categoria === 'Deportes'){   
                 let imagen='';
+                console.log(listaJuegos[i])
                 if(listaJuegos[i].imagen === ''){
                     /** Agregamos img por defecto **/
                     imagen= 'imgPorDefecto.png'

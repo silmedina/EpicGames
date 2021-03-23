@@ -122,7 +122,6 @@ function leerDatosLocalStorage (){
 }
 
 function tabla(juegosCargados) {
-    
     let cuerpo = document.getElementById('tablaJuegos')
     let fila ='';
     cuerpo.innerHTML = '';
@@ -304,4 +303,48 @@ window.guardarJuego = function(event){
       alerta.className ='alert alert-danger mx-3'
       alerta.innerHTML = 'Error. Verifique los datos ingresados' 
     }
+}
+
+/***** Usuarios logueados *****/
+/** Leer datos de LS **/
+let listadoUsuarios =[]
+leerDatosLS()
+function leerDatosLS(){
+    if(localStorage.length > 0){
+        let userLogueadosLS = JSON.parse(localStorage.getItem('usuariosRegistrados'))
+        if(listadoUsuarios.length === 0){
+            listadoUsuarios = userLogueadosLS
+        }
+        tablaUsuarios(userLogueadosLS)
+    }
+}
+/** Tabla usuarios **/
+function tablaUsuarios(userRegistrados){
+    console.log(userRegistrados)
+    let cuerpo = document.getElementById('tablaUsuarios')
+    let fila ='';
+    cuerpo.innerHTML ='';
+    for(let i in userRegistrados){
+        
+        fila =`
+        <tr class="text-white">
+        
+        <td>${userRegistrados[i].usuario}</td>
+        <td>${userRegistrados[i].nombre}</td>
+        <td>${userRegistrados[i].email}</td>
+        <td>${userRegistrados[i].password}</td>
+        <td>${userRegistrados[i].telefono}</td>
+        <td>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Si" id="validar">
+                <label class="form-check-label" for="flexCheckDefault">
+                Validar
+                </label>
+            </div>
+        </td>
+        </tr>
+        `;
+        cuerpo.innerHTML +=fila;
+    }
+    
 }

@@ -513,8 +513,7 @@ margin: 0 auto;
 }
 /* LOGIN Y REGISTRO*/
 .bg-login-registro{
-    min-height: 3000px;
-    
+    /* min-height: 3000px; */
 }
 .scroll-login-registro{
     overflow-y: hidden;
