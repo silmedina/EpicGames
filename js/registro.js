@@ -234,3 +234,13 @@ function validarNumeros(elemento) {
       return false;
     }
   }
+
+  function validarLink(elemento){
+    if(elemento.value != ''){
+        elemento.className = 'form-control is-valid';
+        return true;
+    }else{
+        elemento.className = "form-control is-invalid";
+        return false;
+    }
+  }

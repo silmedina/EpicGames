@@ -13,32 +13,43 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed mr-auto">
-      <div class="container">
-          <a href="index.html" class="navbar-brand">Rolling Games</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarOpciones">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container p-0">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="#navbarOpciones">
-          <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a href="#" class="nav-link">Inicio</a>
+              <a id="botonInicio" class="nav-link " aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item" >
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a id="botonAdministrador" class="nav-link" href="./admin.html"style="display: none;">Administrador</a>
+              </div>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Contacto</a>
+              <a  id="botonRegistro" class="nav-link active" href="./registro.html"style="display: ;">Registro</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Acerca de nosotros</a>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a id="botonLogin" class="nav-link" href="./login.html"style="display: ;">Login</a>
+              </div>
+            </li>
+            <li class="nav-item" >
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+               <div id="infoUsuario"  class="nav-link"style="display: none;"></div>
+              </div>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Login</a>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a id="botonCerrarSesion" class="nav-link" href="javascript:void(0);"style="display: none;">Cerrar Sesion</a>
+              </div>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Registrate</a>
-            </li>
-         </ul>
+          </ul>
         </div>
-      
       </div>
     </nav>
   </header>
@@ -58,10 +69,13 @@
             </div>
             <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
                 <ul class="lista text-center ">
-                    <li>Inicio</li>
-                    <li>Contacto</li>
-                    <li>Acerca de nosotros</li>
-                    <li>Login / Registrate</li>
+                    <li><a href="index.html" class="text-light">Inicio</a></li>
+                    <li><a href="contactos.html" class="text-light">Contacto</a></li>
+                    <li><a href="about.html" class="text-light">Acerca de nosotros</a></li>
+                    <li><a href="registro.html"class="text-light" >Registrate</a></li>
+                    
+                    
+
                 </ul>
             </div>
             <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
@@ -70,15 +84,16 @@
                     <li><a href=""class="text-light " >Compañia</a></li>
                     <li><a href=""class="text-light " >Recursos</a></li>
                     <li><a href="" class="text-light">Más información</a></li>
+                    
                 </ul>
             </div>
             <div class="col-sm-12 col-md-3 col-lg-3 text-center my-5 ">
                 <div>
                     <p>Encontranos en:</p>
-                    <a href=""><i class="fab fa-instagram-square fa-2x text-light "></i></a>
-                    <a href=""><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x text-light "></i></a>
+                    <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
                     <a href="https://twitter.com/" target="_blank "><i class="fab fa-twitter-square fa-2x text-light mr-3"></i></a>
-                    <a href=""><i class="fab fa-github-square fa-2x text-light"></i></a>
+                    <a href="https://github.com/silmedina/EpicGames"><i class="fab fa-github-square fa-2x text-light"></i></a>
                 </div>
             </div>
         </article>

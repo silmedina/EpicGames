@@ -30,7 +30,7 @@ _ En este proyecto se utilizaron las siguientes librerias:_
 -Molina María Pía
 
 ## Expresiones de gratitud 
-A todo el equipo por la predisposición, responsabilidad,compromiso, y compañerismo al momento de 
+A todo el equipo por la predisposición, responsabilidad, compromiso, y compañerismo al momento de 
 realizar el proyecto.
 # Rolling Games
 

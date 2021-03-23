@@ -184,39 +184,33 @@
     }
 }
 
-/** Index **/
-.img-destacado{
-	height: 400px;
-	object-fit: cover;	
-}
-.img-destacados{
-	height: 120px;
-	object-fit: cover;
+/***** Index *****/
+.img-novedades{
+    height: 50px;
+    object-fit: cover;
 }
 .img-deportes{
 	height: 250px;
 	object-fit: cover;
 }
 
-@media screen and (max-width: 576px) {
-	.container-fila-precios{
-		display: flex;
-		justify-content: start;
-	}
-	.fila-precios1{
-		width: 20%;
-	}
-	.fila-precios2{
-		width: 60%;
-	}
-
+.card-deportes{
+    animation-name: card-1;
+    animation-duration: 2s;
 }
-
-
+/** Destacado **/
+.img-destacado{
+	height: 400px;
+	object-fit: cover;	
+}
+/** Carousel recomendados**/
+.img-destacados{
+	height: 120px;
+	object-fit: cover;
+}
 .carousel__contenedor {
 	position: relative;
 }
-
 
 .carousel__lista {
 	overflow: hidden;
@@ -238,6 +232,10 @@
 .carousel__indicadores .glider-dot:hover {
 	opacity: .5;
 }
+.card-recomendados:hover{
+    transform: scale(1.2);
+    transform-origin: center;
+}
 
 .carousel__indicadores .glider-dot.active {
 	opacity: 1;
@@ -245,15 +243,44 @@
 .td-btn{
     align-items: center;
 }
+/** Ofertas y nuevos **/
+.panel-novedades{
+    background-color: #555353;
+    border-radius: 3px;
+}
+.card-novedades:hover{
+    background-color: #4d4d4d;
+    border-radius: 5px;
+}
 
-/** Admin **/
-
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 576px) {
+	.container-fila-precios{
+		display: flex;
+		justify-content: start;
+	}
+}
+@media screen and (max-width: 768px){
+    .carrito{
+        padding-right: 0px;
+        padding-bottom: 8px;
+    }
+}
+/***** Admin *****/
+.img-recomendados{
+    height: 200px;
+}
+.img-recomendados:hover{
+    filter:grayscale(20);
+}
+@media screen and (max-width: 1399px) {
     .td-btn{
         margin: 2px;
     }
 }
-@media screen and (max-width: 991px){
+@media screen and (max-width: 1399px){
+    .td-acciones{
+        text-align: center;
+    }
     .td-btn{
         width: 70%;
     }
@@ -388,6 +415,7 @@ vertical-align: top;
 iframe{
     width: 700px;
     height: 350px;
+margin: 0 auto;
 }
 .botones-detalles {
     position: relative;
