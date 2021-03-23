@@ -28,29 +28,31 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a id="botonInicio" class="nav-link active" aria-current="page" href="index.html" style="display: none;">Inicio</a>
-            </li>
-            <li class="nav-item" >
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a id="botonAdministrador" class="nav-link" href="./admin.html"style="display: none;">Administrador</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a  id="botonRegistro" class="nav-link" href="./registro.html"style="display: none;">Registro</a>
+              <a id="botonInicio" class="nav-link active" aria-current="page" href="index.html"
+                style="display: none;">Inicio</a>
             </li>
             <li class="nav-item">
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a id="botonLogin" class="nav-link" href="./login.html"style="display: none;">Login</a>
+                <a id="botonAdministrador" class="nav-link" href="./admin.html" style="display: none;">Administrador</a>
               </div>
             </li>
-            <li class="nav-item" >
+            <li class="nav-item">
+              <a id="botonRegistro" class="nav-link" href="./registro.html" style="display: none;">Registro</a>
+            </li>
+            <li class="nav-item">
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-               <div id="infoUsuario"  class="nav-link"style="display: none;"></div>
+                <a id="botonLogin" class="nav-link" href="./login.html" style="display: none;">Login</a>
               </div>
             </li>
             <li class="nav-item">
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a id="botonCerrarSesion" class="nav-link" href="javascript:void(0);"style="display: none;">Cerrar Sesion</a>
+                <div id="infoUsuario" class="nav-link" style="display: none;"></div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a id="botonCerrarSesion" class="nav-link" href="javascript:void(0);" style="display: none;">Cerrar
+                  Sesion</a>
               </div>
             </li>
           </ul>
@@ -59,7 +61,7 @@
     </nav>
   </header>
   <main class="bg-dark">
-    <section class="container">
+    <section class="container  p-0">
       <article class="row pt-4 pb-3 d-flex justify-content-end">
         <div class="col-sm-5 col-md-4 d-flex justify-content-end carrito">
           <button type="button" class="btn btn-primary">
@@ -67,7 +69,7 @@
             <span class="visually-hidden">unread messages</span>
           </button>
         </div>
-        <div class="col-md-4 p-0">
+        <div class="col col-sm-11 col-md-4  p-0">
           <form class="form-buscar">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
           </form>
@@ -76,19 +78,18 @@
     </section>
 
     <!-- Destacado -->
-    <section class="container border border-1">
+    <section class="container border border-1 p-0">
       <div class="row" id="juegoDestacado">
-        
 
       </div>
     </section>
     <hr class="bg-white m-4">
-    
+
 
     <!-- Categoria recomendados -->
     <section class="container text-white">
       <article class="row">
-       <h3 class="p-0 my-3">Juegos recomendados</h3>
+        <h3 class="p-0 my-3">Juegos recomendados</h3>
         <div class="carousel">
           <div class="carousel__contenedor">
             <div class="carousel__lista center" id="juegosRecomendados">
@@ -104,54 +105,76 @@
     <!-- En oferta y nuevos -->
     <section class="container text-white">
       <h3 class="p-0 my-3">Novedades y ofertas</h3>
-      <article class="row justify-content-between" id="">
-        <div class="col col-sm-12 col-md-5 p-3 panel-novedades">
-          <div class="d-flex justify-content-between">
-            <div class="">
-              <h5>En oferta</h5>
-            </div>
-            <div class=" p-0">
-              <button type="button" class="btn btn-link btn-sm text-white text-decoration-none border border-1" onclick="" id="" >Ver mas</button>
-            </div>
-          </div>
-          <div class="row py-2">
-            <a href="" class="card-novedades text-white fw-bolder text-decoration-none">
-            <div class="col col-sm-12 d-flex justify-content-lg-start align-items-center">
-              <div class="col col-sm-2">
-                <img src="./img/infamous.jpg" class="img-novedades" alt="">
-              </div>
-              <div class="col col-sm-8">
-                <p>Juego</p>
-              </div>
-              <div class="col col-sm-2">
-                <i class="fas fa-plus-circle align-middle"></i>
-              </div>
-            </div>
-          </a>
-          </div>
-        </div>
-        <div class="col col-sm-12 col-md-5 p-3 panel-novedades">
-          <div class="d-flex justify-content-between">
+      <article class="row d-flex justify-content-between" id="">
+        <!-- Columna 1 -->
+        <div class="col-sm-12 col-md-5 p-3 panel-novedades">
+          <div class="d-flex justify-content-between py-2">
             <div class="">
               <h5>En oferta</h5>
             </div>
             <div class="p-0">
-              <button type="button" class="btn btn-link btn-sm text-white text-decoration-none border border-1" onclick="" id="" >Ver mas</button>
+              <button type="button" class="btn btn-link btn-sm text-white text-decoration-none border border-1"
+                onclick="verMas()" id="">Ver mas</button>
             </div>
           </div>
-          <div class="justify-content-between py-2">
-            <a href="" class="card-novedades text-white fw-bolder text-decoration-none">
-            <div class="col col-sm-12 d-flex justify-content-lg-start align-items-center">
-              <div class="col col-sm-2">
-                <img src="./img/infamous.jpg" class="img-novedades" alt="">
+          <!-- Juegos -->
+          <div class="row py-2" id="ofertas">
+            <a href="" class="card-novedades text-white fw-bolder text-decoration-none p-0 py-1">
+              <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-start">
+                      <div class="">
+                          <img src="./img/imgPorDefecto.png" class="img-novedades" alt="">              
+                      </div>
+                      <div>
+                          <div class="px-2">
+                              <p class="m-0">${listaJuegos[i].nombre}</p>
+                          </div>
+                          <div class="px-2">
+                              <p>$${listaJuegos[i].precio}</p>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="">
+                      <i class="fas fa-plus-circle align-middle"></i>
+                  </div>
               </div>
-              <div class="col col-sm-8">
-                <p>Juego</p>
-              </div>
-              <div class="col col-sm-2">
-                <i class="fas fa-plus-circle align-middle"></i>
-              </div>
+          </a>
+          </div>
+        </div>
+        <!-- Columna 2 -->
+        <div class="col-sm-12 col-md-5 p-3 panel-novedades">
+          <div class="d-flex justify-content-between py-2">
+            <div class="">
+              <h5>Nuevos</h5>
             </div>
+            <div class="p-0">
+              <button type="button" class="btn btn-link btn-sm text-white text-decoration-none border border-1"
+                onclick="verMas()" id="">Ver mas</button>
+            </div>
+          </div>
+          <!-- Juegos -->
+          <div class="row py-2 " id="nuevos">
+            <a href="" class="card-novedades text-white fw-bolder text-decoration-none p-0 py-1">
+              <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-start">
+                      <div class="">
+                          <img src="./img/imgPorDefecto.png" class="img-novedades" alt="">              
+                      </div>
+                      <div>
+                          <div class="px-2">
+                              <p class="m-0">${listaJuegos[i].nombre}</p>
+                          </div>
+                          <div class="px-2">
+                              <p>$${listaJuegos[i].precio}</p>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="">
+                      <i class="fas fa-plus-circle align-middle"></i>
+                  </div>
+              </div>
           </a>
           </div>
         </div>
@@ -165,7 +188,7 @@
       <h3 class="p-0 my-3">Juegos de deportes</h3>
       <article class="row" id="juegosDeportes">
         <!-- Tarjetas -->
-        
+
       </article>
     </section>
     <hr class="bg-white m-4">
@@ -174,7 +197,7 @@
       <h3 class="p-0 my-3">Juegos de Accion</h3>
       <article class="row" id="juegosAccion">
         <!-- Tarjetas -->
-        
+
       </article>
     </section>
     <hr class="bg-white m-4">
@@ -183,7 +206,7 @@
       <h3 class="p-0 my-3">Juegos Clasicos</h3>
       <article class="row" id="juegosClasicos">
         <!-- Tarjetas -->
-        
+
       </article>
     </section>
 
@@ -191,41 +214,42 @@
   <!-- FOOTER -->
   <footer class="bg-dark text-light pt-4">
     <section>
-        <article class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3 text-center">
-                <img src="img/logo rolling code.png" alt="logo pagina" class="w-25 my-2 ">
-                <p >&copy; Rolling Games</p>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
-                <ul class="lista text-center ">
-                    <li><a href="index.html" class="text-light">Inicio</a></li>
-                    <li><a href="contactos.html" class="text-light">Contacto</a></li>
-                    <li><a href="about.html" class="text-light">Acerca de nosotros</a></li>
-                    <li><a href="registro.html"class="text-light" >Registrate</a></li>
-                    
-                    
+      <article class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3 text-center">
+          <img src="img/logo rolling code.png" alt="logo pagina" class="w-25 my-2 ">
+          <p>&copy; Rolling Games</p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
+          <ul class="lista text-center ">
+            <li><a href="index.html" class="text-light">Inicio</a></li>
+            <li><a href="contactos.html" class="text-light">Contacto</a></li>
+            <li><a href="about.html" class="text-light">Acerca de nosotros</a></li>
+            <li><a href="registro.html" class="text-light">Registrate</a></li>
 
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
-                <ul class="lista text-center ">
-                    <li><a href="" class="text-light">Politica de privacidad</a></li>
-                    <li><a href=""class="text-light " >Compañia</a></li>
-                    <li><a href=""class="text-light " >Recursos</a></li>
-                    <li><a href="" class="text-light">Más información</a></li>
-                    
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-5 ">
-                <div>
-                    <p>Encontranos en:</p>
-                    <a href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x text-light "></i></a>
-                    <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
-                    <a href="https://twitter.com/" target="_blank "><i class="fab fa-twitter-square fa-2x text-light mr-3"></i></a>
-                    <a href="https://github.com/silmedina/EpicGames"><i class="fab fa-github-square fa-2x text-light"></i></a>
-                </div>
-            </div>
-        </article>
+
+
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 mt-4 text-center">
+          <ul class="lista text-center ">
+            <li><a href="" class="text-light">Politica de privacidad</a></li>
+            <li><a href="" class="text-light ">Compañia</a></li>
+            <li><a href="" class="text-light ">Recursos</a></li>
+            <li><a href="" class="text-light">Más información</a></li>
+
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 text-center my-5 ">
+          <div>
+            <p>Encontranos en:</p>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram-square fa-2x text-light "></i></a>
+            <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-square fa-2x text-light mr-3"></i> </a>
+            <a href="https://twitter.com/" target="_blank "><i
+                class="fab fa-twitter-square fa-2x text-light mr-3"></i></a>
+            <a href="https://github.com/silmedina/EpicGames"><i class="fab fa-github-square fa-2x text-light"></i></a>
+          </div>
+        </div>
+      </article>
     </section>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
